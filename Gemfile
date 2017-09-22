@@ -22,10 +22,6 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 gem 'devise'
 
-gem 'twitter-bootstrap-rails'
-
-
-
 group :development, :test do
 
   gem 'byebug'
@@ -38,3 +34,5 @@ group :development do
 
   gem 'spring'
 end
+
+gem 'twitter-bootstrap-rails'

@@ -1,6 +1,11 @@
-<p id="notice"><%= notice %></p>
+<div class="container">
+  <div class="wrapper col-md-4 col-md-offset-4 col-sm-10 col-ex-6">
+    <p id="notice"><%= notice %></p>
+
+  <%= link_to '新規投稿', new_collection_path %>
 
   <% @collections.each do |collection| %>
+    <p><%= collection.user.name %></p>
     <p><%= collection.title %></p>
     <p><%= collection.content %></p>
     <p><%= collection.place %></p>
@@ -8,12 +13,8 @@
     <p><%= collection.starttime %></p>
     <p><%= collection.endtime %></p>
     <p><%= link_to '詳細', collection %></p>
-    <p><%= link_to '編集', edit_collection_path(collection) %></p>
+    <p><%= link_to '編集', edit_collection_path(collection)%></p>
     <p><%= link_to '削除', collection, method: :delete, data: { confirm: 'Are you sure?' } %></p>
     <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to '新規投稿', new_collection_path %>
+  </div>
+</div>
