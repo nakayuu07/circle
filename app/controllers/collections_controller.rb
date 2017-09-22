@@ -1,5 +1,6 @@
 class CollectionsController < ApplicationController
   before_action :set_collection, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!
 
   def index
     @collections = Collection.all
