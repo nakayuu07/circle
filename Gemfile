@@ -30,10 +30,13 @@ end
 group :development do
 
   gem 'web-console', '~> 2.0'
-
+  gem 'dotenv-rails'
 
   gem 'spring'
 end
 
 gem 'twitter-bootstrap-rails'
 gem 'bootstrap-sass', '3.2.0.0'
+gem 'omniauth'
+gem 'omniauth-twitter'
+gem 'omniauth-facebook'

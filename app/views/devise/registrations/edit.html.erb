@@ -1,6 +1,6 @@
 <div class="container">
   <div class="wrapper col-md-4 col-md-offset-4 col-sm-10 col-ex-6">
-    <h2>アカウント情報を変更する</h2>
+    <h3>アカウント情報を変更する</h3>
 
     <%= alert %>
 
@@ -9,29 +9,30 @@
 
 
       <div class="field">
-        <%= f.email_field :email, autofocus: true, class: "form-control", placeholder: "メールアドレス" %>
+        <p class = "change-mail"><%= f.email_field :email, autofocus: true, class: "form-control", placeholder: "メールアドレス" %></p>
       </div>
 
       <div class="field">
-       <%= f.text_field :name, class: "form-control", placeholder: "名前" %>
+       <p><%= f.text_field :name, class: "form-control", placeholder: "名前" %></p>
       </div>
 
       <div class="field">
-        <%= f.password_field :password, autocomplete: "off", class: "form-control", placeholder: "パスワード" %>
+        <p><%= f.password_field :password, autocomplete: "off", class: "form-control", placeholder: "パスワード" %></p>
       </div>
 
       <div class="field">
-        <%= f.password_field :password_confirmation, autocomplete: "off", class: "form-control", placeholder: "パスワード（確認）" %>
+        <p><%= f.password_field :password_confirmation, autocomplete: "off", class: "form-control", placeholder: "パスワード（確認）" %></p>
       </div>
 
       <div class="field">
          <%= f.label :現在のパスワード %><br />
-         <%= f.password_field :current_password, autocomplete: "off", class: "form-control" %>
+         <p><%= f.password_field :current_password, autocomplete: "off", class: "form-control" %><p/>
       </div>
 
       <div class="actions">
-        <%= f.submit "サインアップ", class: "btn btn-primary btn-block" %>
+        <p><%= f.submit "変更する", class: "btn btn-primary btn-block" %></p>
       </div>
+      <h5>変更する際には現在のパスワードを入力してください</h5>
    </div>
  </div>
 <% end %>
