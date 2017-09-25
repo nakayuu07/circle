@@ -34,6 +34,7 @@ group :development do
 
   gem 'spring'
 end
+gem 'rails_12factor', group: :production
 
 gem 'twitter-bootstrap-rails'
 gem 'bootstrap-sass', '3.2.0.0'
