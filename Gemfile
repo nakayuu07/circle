@@ -4,9 +4,7 @@ source 'https://rubygems.org'
 
 gem 'rails', '4.2.6'
 
-gem 'sqlite3', groups: %w(test development), require: false
-
-gem 'pg', groups: %w(production), require: false
+gem 'pg'
 
 gem 'sass-rails', '~> 5.0'
 
@@ -33,8 +31,9 @@ group :development do
 
   gem 'web-console', '~> 2.0'
   gem 'dotenv-rails'
-
+  gem 'pry-rails'
   gem 'spring'
+  gem 'letter_opener_web'
 end
 gem 'rails_12factor', group: :production
 

@@ -1,7 +1,7 @@
 class User < ActiveRecord::Base
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
-  devise :database_authenticatable, :registerable,
+  devise :database_authenticatable, :registerable,:confirmable,
          :recoverable, :rememberable, :trackable, :validatable, :omniauthable
 
   has_many :collections,dependent: :destroy
@@ -18,7 +18,7 @@ class User < ActiveRecord::Base
           image_url:   auth.info.image,
           password: Devise.friendly_token[0, 20]
       )
-
+      user.skip_confirmation!
       user.save(validate: false)
     end
     user
@@ -36,7 +36,7 @@ class User < ActiveRecord::Base
          email:    "#{auth.uid}-#{auth.provider}@example.com",
          password: Devise.friendly_token[0, 20]
      )
-     
+     user.skip_confirmation!
      user.save!
    end
    user

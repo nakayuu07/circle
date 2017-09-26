@@ -19,11 +19,12 @@ class CollectionsController < ApplicationController
   def create
     @collection = Collection.new(collection_params)
     @collection.user_id = current_user.id
-      if @collection.save
-        redirect_to collections_path
-      else
-        render 'new'
-      end
+    if @collection.save
+      redirect_to collections_path
+      NoticeMailer.sendmail_collection(@collection).deliver
+        else
+      render 'new'
+    end
   end
 
   def update
@@ -36,7 +37,7 @@ class CollectionsController < ApplicationController
 
   def destroy
      @collection.destroy
-     redirect_to questions_path
+     redirect_to collections_path
   end
 
   private
