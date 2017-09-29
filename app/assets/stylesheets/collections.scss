@@ -6,8 +6,22 @@
   color: red;
 }
 
-.event{
-  margin-top: 20px;
-  text-align: center;
-  font-size:  20px;
+.many_collection{
+  margin-top: 10px;
+  border-top: 1px solid gray;
+}
+
+.right{
+  text-align: right;
+}
+
+.left{
+  text-align: left;
+}
+
+.icon{
+  text-align: right;
+  display: flex;
+  margin-left: 700px;
+  margin-bottom: none;
 }

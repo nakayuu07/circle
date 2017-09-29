@@ -10,6 +10,7 @@ ja:
         place: "場所"
         starttime : "開始時間"
         endtime : "終了時間"
+        capacity : "定員"
       user:
         title: "タイトル"
         name: "名前"

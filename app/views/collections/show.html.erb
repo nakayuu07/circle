@@ -1,4 +1,13 @@
-<p id="notice"><%= notice %></p>
-
-<%= link_to '編集', edit_collection_path(@collection) %> |
-<%= link_to '戻る', collections_path %>
+<div class="container">
+  <div class="wrapper col-md-6 col-md-offset-4 col-sm-6 col-ex-4">
+    <p><%= @collection.title %></p>
+    <p><%= @collection.content %></p>
+    <p><%= @collection.place %></p>
+    <p><%= @collection.date %></p>
+    <p><%= @collection.starttime%></p>
+    <p><%= @collection.endtime%></p>
+    <p><%= @collection.user.name %></p>
+    <%= link_to '編集', edit_collection_path(@collection) %> |
+    <%= link_to '戻る', collections_path %>
+  </div>
+</div>

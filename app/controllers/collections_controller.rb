@@ -22,22 +22,22 @@ class CollectionsController < ApplicationController
     if @collection.save
       redirect_to collections_path
       NoticeMailer.sendmail_collection(@collection).deliver
-        else
+    else
       render 'new'
     end
   end
 
   def update
-      if @collection.update(collection_params)
-        redirect_to collections_path
-      else
-        render 'edit'
-      end
+    if @collection.update(collection_params)
+      redirect_to collections_path
+    else
+      render 'edit'
+    end
   end
 
   def destroy
-     @collection.destroy
-     redirect_to collections_path
+    @collection.destroy
+    redirect_to collections_path
   end
 
   private
@@ -48,6 +48,6 @@ class CollectionsController < ApplicationController
 
 
     def collection_params
-     params.require(:collection).permit(:title, :content, :place, :starttime, :endtime, :date)
+      params.require(:collection).permit(:title, :content, :place, :capacity, :starttime, :endtime, :date)
     end
 end

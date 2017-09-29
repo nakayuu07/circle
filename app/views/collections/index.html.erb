@@ -1,22 +1,26 @@
 <div class="container">
-  <div class="wrapper col-md-4 col-md-offset-4 col-sm-10 col-ex-6">
+  <div class="wrapper col-md-8 col-md-offset-2 col-sm-6 col-ex-4">
 
-    <p class ="new event"><%= link_to "新規作成",new_collection_path, class: "glyphicon glyphicon-pencil" %></p>
+
     <p id="notice"><%= notice %></p>
-
     <% @collections.each do |collection| %>
-      <p><%= collection.user.name %></p>
-      <p><%= collection.title %></p>
-      <p><%= collection.content %></p>
-      <p><%= collection.place %></p>
-      <p><%= collection.date %></p>
-      <p><%= collection.starttime %></p>
-      <p><%= collection.endtime %></p>
-      <p><%= link_to '詳細', collection %></p>
-      <% if current_user.id == collection.user.id %>
-        <p><%= link_to " ", edit_collection_path(collection),class:'glyphicon glyphicon-wrench'%></p>
-        <p><%= link_to " ", collection, method: :delete, data: { confirm: 'Are you sure?' },class: 'glyphicon glyphicon-trash' %></p>
+      <div class = "many_collection">
+        <p = "left"><%= collection.user.name %></p>
+        <!-- <p class = "right">投稿時間：<%= collection.created_at.strftime("%y/%m/%d %p %l:%M") %></p> -->
+        <p class = "left"><%= link_to collection_path(collection) do %><%= collection.title %></p><% end %>
+        <!-- <p class = "left"><%= collection.content %></p> -->
+        <p><%= collection.place %></p>
+        <p><%= collection.capacity %></p>
+        <div class = "datetime">
+          <p><%= collection.date%></p>
+          <p><%= collection.starttime %></p>
+          <p><%= collection.endtime %></p>
+        </div>
+        <% if current_user.id == collection.user.id %>
+          <p><%= link_to " ", edit_collection_path(collection),class:'glyphicon glyphicon-wrench'%></p>
+          <p><%= link_to " ", collection, method: :delete, data: { confirm: 'Are you sure?' },class: 'glyphicon glyphicon-trash' %></p>
+        <% end %>
       <% end %>
-    <% end %>
+    </div>
   </div>
 </div>
