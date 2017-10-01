@@ -15,6 +15,7 @@
 /log/*
 !/log/.keep
 /tmp
+/public/.uploads
 
 #dotenv-rails
 .env
