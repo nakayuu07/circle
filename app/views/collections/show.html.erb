@@ -1,12 +1,14 @@
 <div class="container">
-  <div class="wrapper col-md-6 col-md-offset-4 col-sm-6 col-ex-4">
-    <p><%= @collection.title %></p>
+  <div class="wrapper col-md-8 col-md-offset-2 col-sm-6 col-ex-4">
+    <p><strong>タイトル</strong>
+    <p class ="center" ><%= @collection.title %></p>
+    <p><strong>内容</strong></p>
     <p><%= @collection.content %></p>
-    <p><%= @collection.place %></p>
-    <p><%= @collection.date %></p>
-    <p><%= @collection.starttime%></p>
-    <p><%= @collection.endtime%></p>
-    <p><%= @collection.user.name %></p>
+    <p><strong>場所：<%= @collection.place %></strong></p>
+    <p><strong>日付：<%= @collection.date %></strong></p>
+    <p><strong>開始時間：<%= @collection.starttime%></strong></p>
+    <p><strong>終了時間：<%= @collection.endtime%></strong></p>
+    <p><strong>投稿者：<%= @collection.user.name %></strong></p>
     <%= link_to '編集', edit_collection_path(@collection) %> |
     <%= link_to '戻る', collections_path %>
   </div>

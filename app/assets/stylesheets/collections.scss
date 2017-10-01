@@ -13,15 +13,24 @@
 
 .right{
   text-align: right;
+  margin-top: 0px;
 }
 
 .left{
   text-align: left;
 }
 
-.icon{
-  text-align: right;
-  display: flex;
-  margin-left: 700px;
-  margin-bottom: none;
+.title{
+  margin-top: 40px;
+}
+.action{
+  width: 30px;
+}
+
+.event{
+  font-size: 20px;
+}
+
+.center{
+  text-align: center;
 }

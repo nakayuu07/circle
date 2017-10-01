@@ -5,21 +5,16 @@
     <p id="notice"><%= notice %></p>
     <% @collections.each do |collection| %>
       <div class = "many_collection">
-        <p = "left"><%= collection.user.name %></p>
-        <!-- <p class = "right">投稿時間：<%= collection.created_at.strftime("%y/%m/%d %p %l:%M") %></p> -->
-        <p class = "left"><%= link_to collection_path(collection) do %><%= collection.title %></p><% end %>
-        <!-- <p class = "left"><%= collection.content %></p> -->
-        <p><%= collection.place %></p>
-        <p><%= collection.capacity %></p>
-        <div class = "datetime">
-          <p><%= collection.date%></p>
-          <p><%= collection.starttime %></p>
-          <p><%= collection.endtime %></p>
-        </div>
-        <% if current_user.id == collection.user.id %>
+        <p class = "event"><%= link_to collection_path(collection) do %><strong><%= collection.title %><strong</p><% end %>
+        <p>場所：<strong><%= collection.place %></strong></p>
+        <p>定員：<%= collection.capacity %></p>
+        <p class = ""><strong>開始時間：<%= collection.starttime %></p>
+        <p class = "righ">終了時間：<%= collection.endtime %></strong></p>
+        <p class = "righ"><strong>日付：<%= collection.date%></strong></p>
+        <!-- <% if current_user.id == collection.user.id %>
           <p><%= link_to " ", edit_collection_path(collection),class:'glyphicon glyphicon-wrench'%></p>
           <p><%= link_to " ", collection, method: :delete, data: { confirm: 'Are you sure?' },class: 'glyphicon glyphicon-trash' %></p>
-        <% end %>
+        <% end %> -->
       <% end %>
     </div>
   </div>
