@@ -1,5 +1,5 @@
 <div class="container">
-  <div class="wrapper col-md-4 col-sm-10 col-ex-6">
+  <div class="wrapper col-md-8 col-sm-10 col-ex-6">
     <%= form_for(@collection) do |f| %>
       <% if @collection.errors.any? %>
         <div id="error_explanation">
@@ -21,11 +21,11 @@
         <p class = "place"><%= f.text_field :place, size: "101",placeholder: "場所" %></p>
         <h1>イベント開催日時</h1>
           <br>
-        <p class = "date">日付：<%= f.date_field :date%></p>
+        <p class = "date"><strong>日付：<%= f.date_field :date%></strong></p>
           <br>
-        <p class = "starttaime">開始時間：<%= f.time_field :starttime%></p>
+        <p class = "starttime"><strong>開始時間：<%= f.time_field :starttime%></strong></p>
           <br>
-        <p class = "endtime">終了時間：<%= f.time_field :endtime%></p>
+        <p class = "endtime"><strong>終了時間：<%= f.time_field :endtime%></strong></p>
           <br>
         <h1>定員数</h1>
         <p class = "capacity"><%= f.text_field :capacity, placeholder: "定員" %>人</p>
@@ -33,7 +33,7 @@
 
 
       <div class="Contribution">
-        <%= f.submit '投稿',class: 'btn-success btn-block' %>
+        <%= f.submit '投稿',class: 'btn-success btn btn-lg' %>
       </div>
     <% end %>
   </div>

@@ -5,12 +5,16 @@
     <p id="notice"><%= notice %></p>
     <% @collections.each do |collection| %>
       <div class = "many_collection">
-        <p class = "event"><%= link_to collection_path(collection) do %><strong><%= collection.title %><strong</p><% end %>
+        <p class = "event"><%= link_to collection_path(collection) do %><strong><%= collection.title %><strong></p><% end %>
         <p>場所：<strong><%= collection.place %></strong></p>
-        <p>定員：<%= collection.capacity %></p>
+        <p>定員：<%= collection.capacity %>名</p>
+        <p class = "righ"><strong>日付：<%= collection.date%></strong></p>
         <p class = ""><strong>開始時間：<%= collection.starttime %></p>
         <p class = "righ">終了時間：<%= collection.endtime %></strong></p>
-        <p class = "righ"><strong>日付：<%= collection.date%></strong></p>
+        <div class = "user-info">
+          <p class = "right"><strong>投稿者：<%= collection.user.name %></strong></p>
+          <p class = "event-picture right"><%= profile_img(collection.user) %></strong></p>
+        </div>
         <!-- <% if current_user.id == collection.user.id %>
           <p><%= link_to " ", edit_collection_path(collection),class:'glyphicon glyphicon-wrench'%></p>
           <p><%= link_to " ", collection, method: :delete, data: { confirm: 'Are you sure?' },class: 'glyphicon glyphicon-trash' %></p>

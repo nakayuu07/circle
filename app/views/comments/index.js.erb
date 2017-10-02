@@ -1,0 +1,2 @@
+$("#comments_area").html("<%= j(render 'comments/index', { comments: @comment.collection.comments, collection: @comment.collection }) %>")
+$(':text').val('')

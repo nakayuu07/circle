@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+
   devise_for :users, controllers: {
     registrations: "users/registrations",
     omniauth_callbacks: "users/omniauth_callbacks"
@@ -7,7 +8,9 @@ Rails.application.routes.draw do
     mount LetterOpenerWeb::Engine, at: "/letter_opener"
   end
 
-  resources :collections
+  resources :collections do
+   resources :comments
+  end
 
   root 'top#index'
 

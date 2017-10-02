@@ -8,8 +8,18 @@
     <p><strong>日付：<%= @collection.date %></strong></p>
     <p><strong>開始時間：<%= @collection.starttime%></strong></p>
     <p><strong>終了時間：<%= @collection.endtime%></strong></p>
-    <p><strong>投稿者：<%= @collection.user.name %></strong></p>
-    <%= link_to '編集', edit_collection_path(@collection) %> |
+    <div class = "user-info">
+      <p class = "right"><strong>投稿者：<%= @collection.user.name %></strong></p>
+      <p class = "event-picture right"><%= profile_img(@collection.user) %></strong></p>
+    </div>
+    <p class = "center">コメント一覧</p>
+    <div id="comments_area">
+      <%= render partial: 'comments/index', locals: { comments: @comments, collection: @collection } %>
+    </div>
+    <%= render partial: 'comments/form', locals: { comment: @comment, collection: @collection } %>
+    <% if current_user.id == @collection.user_id %>
+      <%= link_to '編集', edit_collection_path(@collection) %> |
+    <% end %>
     <%= link_to '戻る', collections_path %>
   </div>
 </div>

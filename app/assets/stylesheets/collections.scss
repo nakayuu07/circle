@@ -34,3 +34,32 @@
 .center{
   text-align: center;
 }
+
+.event-picture img{
+  max-width: 80px;
+  border-radius: 20px;
+}
+.user-info{
+  position: relative;
+  top: -100px;
+  margin-bottom: -100px;
+}
+
+.starttime{
+    position: relative;
+    top: -70px;
+    left: 220px;
+}
+.endtime{
+  position: relative;
+  top: -140px;
+  left: 400px;
+  margin-bottom: -150px;
+}
+
+.Contribution{
+  position: relative;
+  top: -50px;
+  left: 400px;
+  margin-bottom: -50px;
+}

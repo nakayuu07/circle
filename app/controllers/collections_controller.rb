@@ -7,6 +7,8 @@ class CollectionsController < ApplicationController
   end
 
   def show
+    @comment = @collection.comments.build
+    @comments = @collection.comments
   end
 
   def new
