@@ -15,10 +15,10 @@
           <p class = "right"><strong>投稿者：<%= collection.user.name %></strong></p>
           <p class = "event-picture right"><%= profile_img(collection.user) %></strong></p>
         </div>
-        <!-- <% if current_user.id == collection.user.id %>
-          <p><%= link_to " ", edit_collection_path(collection),class:'glyphicon glyphicon-wrench'%></p>
-          <p><%= link_to " ", collection, method: :delete, data: { confirm: 'Are you sure?' },class: 'glyphicon glyphicon-trash' %></p>
-        <% end %> -->
+        <% if current_user.id == collection.user.id %>
+          <p class = "icon"><%= link_to " ", edit_collection_path(collection),class:'glyphicon glyphicon-wrench'%>
+             <%= link_to " ", collection, method: :delete, data: { confirm: '本当に削除してもいいですか?' },class: 'glyphicon glyphicon-trash' %></p>
+        <% end %>
       <% end %>
     </div>
   </div>
