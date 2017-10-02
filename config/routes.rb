@@ -1,5 +1,13 @@
 Rails.application.routes.draw do
 
+  get 'relationships/create'
+
+  get 'relationships/destroy'
+
+  resources :users, only: [:index]
+
+   resources :relationships, only: [:create, :destroy]
+
   devise_for :users, controllers: {
     registrations: "users/registrations",
     omniauth_callbacks: "users/omniauth_callbacks"

@@ -7,12 +7,16 @@
     <p><strong>場所：<%= @collection.place %></strong></p>
     <p><strong>日付：<%= @collection.date %></strong></p>
     <p><strong>開始時間：<%= @collection.starttime%></strong></p>
-    <p><strong>終了時間：<%= @collection.endtime%></strong></p>
+    <p class = "show-endtime"><strong>終了時間：<%= @collection.endtime%></strong></p>
     <div class = "user-info">
       <p class = "right"><strong>投稿者：<%= @collection.user.name %></strong></p>
       <p class = "event-picture right"><%= profile_img(@collection.user) %></strong></p>
     </div>
-    <p class = "center">コメント一覧</p>
+    <% if current_user.id == @collection.user.id %>
+      <p class = "show-icon"><%= link_to " ", edit_collection_path(@collection),class:'glyphicon glyphicon-wrench'%>
+      <%= link_to " ", @collection, method: :delete, data: { confirm: '本当に削除してもいいですか?' },class: 'glyphicon glyphicon-trash' %></p>
+    <% end %>
+    <p class = "comments">コメント一覧</p>
     <div id="comments_area">
       <%= render partial: 'comments/index', locals: { comments: @comments, collection: @collection } %>
     </div>
