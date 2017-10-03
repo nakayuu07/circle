@@ -9,6 +9,8 @@ class CollectionsController < ApplicationController
   def show
     @comment = @collection.comments.build
     @comments = @collection.comments
+    @join = current_user.joins.find_by(collection_id: @collection.id)
+
   end
 
   def new

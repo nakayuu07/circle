@@ -1,5 +1,11 @@
 <div class="container">
   <div class="wrapper col-md-8 col-md-offset-2 col-sm-6 col-ex-4">
+
+    <p id="notice"><%= notice %></p>
+    <div id = "join_area">
+      <%= render partial: 'joins/join', locals: { join: @join, collection: @collection } %>
+    </div>
+
     <p><strong>タイトル</strong>
     <p class ="center" ><%= @collection.title %></p>
     <p><strong>内容</strong></p>
@@ -12,18 +18,20 @@
       <p class = "right"><strong>投稿者：<%= @collection.user.name %></strong></p>
       <p class = "event-picture right"><%= profile_img(@collection.user) %></strong></p>
     </div>
+
     <% if current_user.id == @collection.user.id %>
       <p class = "show-icon"><%= link_to " ", edit_collection_path(@collection),class:'glyphicon glyphicon-wrench'%>
       <%= link_to " ", @collection, method: :delete, data: { confirm: '本当に削除してもいいですか?' },class: 'glyphicon glyphicon-trash' %></p>
     <% end %>
+
     <p class = "comments">コメント一覧</p>
     <div id="comments_area">
       <%= render partial: 'comments/index', locals: { comments: @comments, collection: @collection } %>
     </div>
-    <%= render partial: 'comments/form', locals: { comment: @comment, collection: @collection } %>
-    <% if current_user.id == @collection.user_id %>
-      <%= link_to '編集', edit_collection_path(@collection) %> |
-    <% end %>
-    <%= link_to '戻る', collections_path %>
+      <%= render partial: 'comments/form', locals: { comment: @comment, collection: @collection } %>
+      <% if current_user.id == @collection.user_id %>
+        <%= link_to '編集', edit_collection_path(@collection) %> |
+      <% end %>
+      <%= link_to '戻る', collections_path %>
   </div>
 </div>
