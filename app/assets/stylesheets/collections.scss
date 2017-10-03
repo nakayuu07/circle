@@ -38,11 +38,17 @@
 .event-picture img{
   max-width: 80px;
   border-radius: 20px;
+  // margin-bottom: 60px;
 }
+
 .user-info{
   position: relative;
+  top: -120px;
+}
+
+.show-user-info{
+  position: relative;
   top: -100px;
-  margin-bottom: -100px;
 }
 
 .starttime{
@@ -66,12 +72,13 @@
 
 .icon{
   text-align: right;
-  margin-bottom: -13px;
+  margin-top: -120px;
 }
 
 .show-icon{
   text-align: right;
-  margin-bottom: 20px;
+  margin-bottom: 70px;
+  margin-top: -100px;
 }
 
 .show-endtime{
