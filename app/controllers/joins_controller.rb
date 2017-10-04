@@ -1,5 +1,6 @@
 class JoinsController < ApplicationController
    before_action :authenticate_user!
+    respond_to :js
 
    def create
      @join = current_user.joins.create(collection_id: params[:collection_id])
@@ -7,7 +8,7 @@ class JoinsController < ApplicationController
    end
 
     def destroy
-      @join = current_user.joins.find_by(collection_id: params[:collection_id]).destroy      
+      @join = current_user.joins.find_by(collection_id: params[:collection_id]).destroy
       redirect_to collection_url(@join.collection_id), notice: "#{@join.collection.user.name}さんのイベントに不参加になりました"
     end
   end
