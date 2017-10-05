@@ -38,12 +38,13 @@
 .event-picture img{
   max-width: 80px;
   border-radius: 20px;
-  // margin-bottom: 60px;
+  margin-bottom: -60px;
 }
 
 .user-info{
   position: relative;
   top: -120px;
+  margin-bottom: -60px;
 }
 
 .show-user-info{
@@ -70,10 +71,10 @@
   margin-bottom: -50px;
 }
 
-.icon{
-  text-align: right;
-  margin-top: -120px;
-}
+// .icon{
+//   text-align: right;
+//   margin-top: -120px;
+// }
 
 .show-icon{
   text-align: right;
@@ -85,8 +86,7 @@
   margin-bottom: -10px;
 }
 
-.join{
-  text-align: right;
-  // // margin-top: -100px;
-  // margin-bottom: 20px;
+.collection-info{
+  position: absolute;
+  top:-10px;
 }

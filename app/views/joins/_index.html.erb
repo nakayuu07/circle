@@ -1,0 +1,5 @@
+<h3>参加者一覧</h3>
+<% collection.join_users.each do |user| %>
+  <p>・<%= profile_img(user) %>
+  <%= user.name %></p>
+<% end %>

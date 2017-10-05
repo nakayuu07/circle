@@ -1,6 +1,5 @@
 class JoinsController < ApplicationController
    before_action :authenticate_user!
-    respond_to :js
 
    def create
      @join = current_user.joins.create(collection_id: params[:collection_id])
