@@ -3,7 +3,7 @@ class CollectionsController < ApplicationController
   before_action :authenticate_user!
 
   def index
-    @collections = Collection.all
+    @collections = Collection.search(params[:search])
   end
 
   def show
