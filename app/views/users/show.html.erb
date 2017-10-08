@@ -1,0 +1,22 @@
+<div class="container">
+  <div class="col-md-6 col-md-offset-3 col-sm-10 col-sm-offset-1">
+    <h1 class="mypage-picture"><%= profile_img(@user) if profile_img(@user) %>
+       <%= @user.name %>さんのページです</h1>
+    <ul class="nav nav-tabs">
+     	<li><a href="#sampleContentA" data-toggle="tab">主催イベント</a></li>
+     	<li class="active"><a href="#sampleContentB" data-toggle="tab">参加イベント</a></li>
+    </ul>
+    <div class="tab-content">
+	    <div class="tab-pane" id="sampleContentA">
+        <% @collections.each do |collection| %>
+          <p><%= collection.title %></p>
+        <% end %>
+      </div>
+  	  <div class="tab-pane active" id="sampleContentB">
+        <% @joins.each do |join| %>
+            <p><%= join.collection.title %></p>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
