@@ -1,0 +1,2 @@
+$("#comment_area_<%= @comment.id %>").html("<%= j(render 'comments/form', { comment: @comment, collection: @comment.collection }) %>")
+$(':text').val(<%= @comment.content %>)

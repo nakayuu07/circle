@@ -3,10 +3,10 @@
     <% unless comment.id.nil? %>
       <li>
         <p class="left"><%= comment.user.name %>さんがコメントしました。</p>
-        <p class="left"><%= comment.content %></p>
+        <p id="comment_area_<%= comment.id %>"><%= comment.content %></p>
         <% if current_user.id == comment.user.id %>
           <p class="right">
-            <%= link_to '', edit_collection_comment_path(collection, comment), class: "fa fa-pencil-square-o fa-lg" %>
+            <%= link_to '', edit_collection_comment_path(collection, comment), remote: true, class: "fa fa-pencil-square-o fa-lg" %>
             <%= link_to '', collection_comment_path(collection, comment), class: "fa fa-trash-o fa-lg", method: :delete, remote: true, data: { confirm: '本当に削除していいですか？' } %>
           </p>
         <% end %>
