@@ -28,7 +28,7 @@
     </div>
 
     <% if current_user.id == @collection.user.id %>
-      <p class = "show-icon"><%= link_to " ", edit_collection_path(@collection),class:'glyphicon glyphicon-wrench'%>
+      <p class = "show-icon"><%= link_to " ", edit_collection_path(@collection),class:'fa fa-pencil-square-o fa-lg'%>
       <%= link_to " ", @collection, method: :delete, data: { confirm: '本当に削除してもいいですか?' },class: 'glyphicon glyphicon-trash' %></p>
     <% end %>
 

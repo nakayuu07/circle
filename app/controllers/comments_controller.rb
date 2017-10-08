@@ -2,11 +2,11 @@ class CommentsController < ApplicationController
   def create
     @comment = current_user.comments.build(comment_params)
     @collection = @comment.collection
-
     respond_to do |format|
       if @comment.save
         format.html { redirect_to collection_path(@collection), notice: 'コメントを投稿しました。' }
         format.js { render :index }
+        NoticeMailer.sendmail_comment(@collection).deliver
       else
         format.html { render :new }
       end

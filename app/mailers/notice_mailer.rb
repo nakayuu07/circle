@@ -8,7 +8,14 @@ class NoticeMailer < ApplicationMailer
   def sendmail_collection(collection)
     @collection = collection
 
-    mail to: "@collection.user.email",
+    mail to: @collection.user.email,
        subject: '【collection】新たにイベントが投稿されました'
+  end
+
+  def sendmail_comment(collection)
+    @collection = collection
+
+    mail to: @collection.user.email,
+       subject: 'あなたのイベントにコメントがあります！'
   end
 end
