@@ -12,7 +12,8 @@
         <p class = ""><strong>開始時間：<%= collection.starttime %></p>
         <p class = "righ">終了時間：<%= collection.endtime %></strong></p>
         <div class = "user-info">
-          <p class = "right"><strong>投稿者：<%= collection.user.name %></strong></p>
+          <p class = "right"><strong>投稿者：<%= link_to user_path(collection.user.id) do %><%= collection.user.name %></strong></p>
+          <% end %>
           <p class = "event-picture right"><%= profile_img(collection.user) %></strong></p>
         </div>
       </div>

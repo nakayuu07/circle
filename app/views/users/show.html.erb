@@ -1,10 +1,16 @@
 <div class="container">
   <div class="col-md-6 col-md-offset-3 col-sm-10 col-sm-offset-1">
     <h1 class="mypage-picture"><%= profile_img(@user) if profile_img(@user) %>
-       <%= @user.name %>さんのページです</h1>
+      <%= @user.name %>さんのページです</h1>
+      <% if current_user.id != @user.id %>
+        <p><%= render 'follow_form', user: @user %></p>
+      <% end %>
+
     <ul class="nav nav-tabs">
      	<li><a href="#user-event" data-toggle="tab">主催イベント</a></li>
      	<li class="active"><a href="#user-join" data-toggle="tab">参加予定イベント</a></li>
+      <li class="active"><a href="#user-follwed" data-toggle="tab">フォロー一覧</a></li>
+      <li class="active"><a href="#user-follower" data-toggle="tab">フォロワー一覧</a></li>
     </ul>
     <div class="tab-content">
 	    <div class="tab-pane" id="user-event">
@@ -19,6 +25,17 @@
             <% end %>
         <% end %>
       </div>
-    </div>
-  </div>
+      <div class="tab-pane followed" id="user-follwed">
+        <% @follows.each do |follow| %>
+          <p><%= profile_img(follow) %>
+             <%= link_to user_path(follow.id) do %><%= follow.name %></p><% end %>
+        <% end %>
+      </div>
+      <div class="tab-pane followed" id="user-follower">
+        <% @followed.each do |follow| %>
+          <p><%= profile_img(follow) %>
+             <%= link_to user_path(follow.id) do %><%= follow.name %></p><% end %>
+        <% end %>
+     </div>
+   </div>
 </div>

@@ -9,5 +9,7 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     @collections = @user.collections
     @joins = @user.joins.order("created_at desc")
+    @follows = @user.followed_users
+    @followed = @user.followers
   end
 end

@@ -47,6 +47,8 @@
       <div class="actions">
         <p><%= f.submit "変更する", class: "btn btn-primary btn-block" %></p>
       </div>
+
+      <%= link_to "マイページ",user_path(@user.id) %>
    </div>
  </div>
 <% end %>
