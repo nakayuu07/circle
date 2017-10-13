@@ -37,8 +37,5 @@
       <%= render partial: 'comments/index', locals: { comments: @comments, collection: @collection } %>
     </div>
       <%= render partial: 'comments/form', locals: { comment: @comment, collection: @collection } %>
-      <% if current_user.id == @collection.user_id %>
-        <%= link_to '編集', edit_collection_path(@collection)%> |
-      <% end %>
   </div>
 </div>

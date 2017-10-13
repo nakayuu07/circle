@@ -2,7 +2,7 @@
   <% comments.each do |comment| %>
     <% unless comment.id.nil? %>
       <div class = "comment_form">
-        <p class = "comment_image left"><%= profile_img(comment.user) %>
+        <p class = "comment_image left"><%= link_to user_path(comment.user.id) do %><%= profile_img(comment.user) %><% end %>
         <%= comment.user.name %>さんがコメントしました。</p>
         <div class = "center">
           <p id="comment_area_<%= comment.id %>"><%= comment.content %></p>
