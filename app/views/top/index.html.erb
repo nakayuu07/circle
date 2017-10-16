@@ -1,6 +1,19 @@
 <p id="notice"><%= notice %></p>
-<!-- <div class="row col-md-12 col-sm-12 col-ex-12">
-  <div class="main-header">
-    <img src ="<%= asset_path "main-image.jpg" %>">
+
+<p class = "main_title"> circle </p>
+
+<% if user_signed_in? %>
+  <div class = "description">
+    <h5>このアプリは幹事様、イベントを開催したい人向けのアプリケーションです。</h5><br>
+    <h5>こんなイベントやってみたい、こんなイベントがあるなら行ってみたい。</h5><br>
+    <h5>といった新たなコミュニティーを作ることを目的としたアプリになっております。</h5><br>
   </div>
-</div> -->
+<% else %>
+  <div class = "description">
+    <h5>このアプリは幹事様、イベントを開催したい人向けのアプリケーションです。</h5><br>
+    <h5>こんなイベントやってみたい、こんなイベントがあるなら行ってみたい。</h5><br>
+    <h5>といった新たなコミュニティーを作ることを目的としたアプリになっております。</h5><br>
+    <h5>ここにいる皆さんで新たなコミュニティーを作りませんか?</h5><br>
+    <h5><%= link_to "JOIN",new_user_registration_path, class: "btn btn-danger btn-lg" %></h5>
+  </div>
+<% end %>
