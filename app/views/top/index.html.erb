@@ -1,19 +1,21 @@
 <p id="notice"><%= notice %></p>
 
-<p class = "main_title"> circle </p>
-
 <% if user_signed_in? %>
   <div class = "description">
-    <h5>このアプリは幹事様、イベントを開催したい人向けのアプリケーションです。</h5><br>
+    <p class = "login_title"> circle </p>
+    <h5>このアプリは幹事様、イベントを開催したい人向けのwebサービスです。</h5><br>
     <h5>こんなイベントやってみたい、こんなイベントがあるなら行ってみたい。</h5><br>
     <h5>といった新たなコミュニティーを作ることを目的としたアプリになっております。</h5><br>
   </div>
 <% else %>
-  <div class = "description">
-    <h5>このアプリは幹事様、イベントを開催したい人向けのアプリケーションです。</h5><br>
+  <body id = "introduce">
+  <div class = "before_description">
+    <p class = "top_title"> circle </p>
+    <h5>このアプリは幹事様、イベントを開催したい人向けのwebサービスです。</h5><br>
     <h5>こんなイベントやってみたい、こんなイベントがあるなら行ってみたい。</h5><br>
-    <h5>といった新たなコミュニティーを作ることを目的としたアプリになっております。</h5><br>
+    <h5>といった新たなコミュニティーを作ることを目的としたwebサービスです。</h5><br>
     <h5>ここにいる皆さんで新たなコミュニティーを作りませんか?</h5><br>
     <h5><%= link_to "JOIN",new_user_registration_path, class: "btn btn-danger btn-lg" %></h5>
   </div>
 <% end %>
+</body>

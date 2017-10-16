@@ -37,9 +37,38 @@ body{
   top: 10px;
 }
 
-.main_title{
+.top_title{
 text-align: center;
 margin-top: 170px;
 font-size: 70px;
 font-family: fantasy;
+color: #FFFAFA;
+}
+
+.login_title{
+  text-align: center;
+  margin-top: 170px;
+  font-size: 70px;
+  font-family: fantasy;
+}
+.description{
+  text-align: center;
+}
+
+.before_description{
+  text-align: center;
+  color: #FFFAFA;
+}
+
+
+
+#introduce{
+  background-image: image-url("top.jpg");
+  background-size: 100%
+}
+
+
+
+#notice{
+  color: green;
 }
