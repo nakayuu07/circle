@@ -28,9 +28,10 @@
         <p class = "endtime"><strong>終了時間：<%= f.time_field :endtime%></strong></p>
           <br>
         <h1>定員数</h1>
-        <p class = "capacity"><%= f.text_field :capacity, placeholder: "定員" %>人</p>
-
-
+        <p class = "capacity"><%= f.text_field :capacity, placeholder: "定員" %>人</p><br>
+        <h1> イベントのイメージ写真</h1>
+        <p><%= f.file_field :picture %><p>
+           <%= f.hidden_field :picture_cache %>
 
       <div class="Contribution">
         <%= f.submit '投稿',class: 'btn-success btn btn-lg' %>

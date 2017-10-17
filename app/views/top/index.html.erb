@@ -5,17 +5,18 @@
     <p class = "login_title"> circle </p>
     <h5>このアプリは幹事様、イベントを開催したい人向けのwebサービスです。</h5><br>
     <h5>こんなイベントやってみたい、こんなイベントがあるなら行ってみたい。</h5><br>
-    <h5>といった新たなコミュニティーを作ることを目的としたアプリになっております。</h5><br>
+    <h5>といったイベントを通し新たなコミュニティーを作ることを目的としたwebサービスです。</h5><br>
   </div>
 <% else %>
   <body id = "introduce">
   <div class = "before_description">
     <p class = "top_title"> circle </p>
-    <h5>このアプリは幹事様、イベントを開催したい人向けのwebサービスです。</h5><br>
-    <h5>こんなイベントやってみたい、こんなイベントがあるなら行ってみたい。</h5><br>
-    <h5>といった新たなコミュニティーを作ることを目的としたwebサービスです。</h5><br>
-    <h5>ここにいる皆さんで新たなコミュニティーを作りませんか?</h5><br>
-    <h5><%= link_to "JOIN",new_user_registration_path, class: "btn btn-danger btn-lg" %></h5>
+    <p class = "explain">このアプリは幹事様、イベントを開催したい人向けのwebサービスです。</p><br>
+    <p class = "explain">こんなイベントやってみたい、こんなイベントがあるなら行ってみたい。</p><br>
+    <p class = "explain">といったイベントを通し新たなコミュニティーを作ることを目的としたwebサービスです。</p><br>
+    <p class = "explain">circleで新たなコミュニティーを作りませんか?</p><br>
+    <p class = "top_join"><%= link_to "JOIN",new_user_registration_path, class: "btn btn-danger btn-lg" %></p>
+    <p class = "top_login"><%= link_to "login", new_user_session_path, class: "btn btn- btn-success btn-lg" %></p>
   </div>
 <% end %>
 </body>

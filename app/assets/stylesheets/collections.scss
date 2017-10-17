@@ -6,14 +6,18 @@
   color: red;
 }
 
-.many_collection{
-  margin-top: 10px;
-  border-top: 1px solid gray;
-}
+// .many_collection{
+//   margin-top: 10px;
+//   border-top: 1px solid gray;
+// }
 
 .right{
   text-align: right;
   margin-top: 0px;
+}
+
+.event{
+  margin-left: 150px;
 }
 
 .left{
@@ -27,24 +31,38 @@
   width: 30px;
 }
 
-.event{
-  font-size: 20px;
+.event-child {
+padding: 0.5em 1em;
+margin-left: 120px;
+margin-top: 30px;
+font-weight: bold;
+color: black;/*文字色*/ background: #FFF;
+border: solid 3px black;/*線*/ border-radius: 10px;/*角の丸み*/
 }
+
+// .event-child a:hover { background-color: #247BA0;
+//  color:#222222; }
 
 .center{
   text-align: center;
 }
 
+
 .event-picture img{
-  max-width: 80px;
-  border-radius: 20px;
-  margin-bottom: -60px;
+  width: 100px;
+  height: 120px;
+  border-radius: 30px;
 }
 
-.user-info{
-  position: relative;
-  top: -120px;
-  margin-bottom: -60px;
+.event-picture{
+  text-align: right;
+  margin-top: -125px;
+  margin-bottom: -5px;
+}
+
+.user-picture img{
+  max-width: 80px;
+  border-radius: 30px;
 }
 
 .show-user-info{
@@ -71,15 +89,10 @@
   margin-bottom: -50px;
 }
 
-// .icon{
-//   text-align: right;
-//   margin-top: -120px;
-// }
-
 .show-icon{
   text-align: right;
   margin-bottom: 70px;
-  margin-top: -50px;
+  margin-top: -100px;
 }
 
 .show-endtime{

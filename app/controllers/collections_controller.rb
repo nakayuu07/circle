@@ -17,6 +17,7 @@ class CollectionsController < ApplicationController
   end
 
   def edit
+    @collection.picture.cache! unless @collection.picture.blank?
   end
 
   def create
@@ -51,6 +52,6 @@ class CollectionsController < ApplicationController
 
 
     def collection_params
-      params.require(:collection).permit(:title, :content, :place, :capacity, :starttime, :endtime, :date)
+      params.require(:collection).permit(:title, :content, :place, :capacity, :starttime, :endtime, :date, :picture,:picture_cache)
     end
 end

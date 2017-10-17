@@ -1,22 +1,19 @@
-<div class="container">
-  <div class="wrapper col-md-8 col-md-offset-2 col-sm-6 col-ex-4">
-
-
-    <p id="notice"><%= notice %></p>
-    <% @collections.each do |collection| %>
-      <div class = "many_collection">
-        <p class = "event"><%= link_to collection_path(collection) do %><strong><%= collection.title %><strong></p><% end %>
-        <p>場所：<strong><%= collection.place %></strong></p>
-        <p>定員：<%= collection.capacity %>名</p>
-        <p class = "righ"><strong>日付：<%= collection.date%></strong></p>
-        <p class = ""><strong>開始時間：<%= collection.starttime %></p>
-        <p class = "righ">終了時間：<%= collection.endtime %></strong></p>
-        <div class = "user-info">
-          <p class = "right"><strong>投稿者：<%= link_to user_path(collection.user.id) do %><%= collection.user.name %></strong></p>
-          <% end %>
-          <p class = "event-picture right"><%= profile_img(collection.user) %></strong></p>
-        </div>
-      </div>
+<div class="container event">
+  <p id="notice"><%= notice %></p>
+  <% @collections.each do |collection| %>
+  <%= link_to collection_path(collection) do %>
+  <div class="event-child col-md-4 col-md-offset- col-sm-4 col-xs-6 ">
+    <p>題名:<%= collection.title %></p>
+    <p>場所:<%= collection.place %></p>
+    <p>日付:<%= collection.date %></p>
+    <p>開始時間:<%= collection.starttime%></p>
+    <% unless collection.picture.blank?%>
+      <p class = "event-picture"><%= image_tag collection.picture %></p>
+    <% else %>
+      <p class = "event-picture"><%= image_tag 'no_image.png' %></p>
     <% end %>
+  <% end %>
+  </div>
+  <% end %>
   </div>
 </div>

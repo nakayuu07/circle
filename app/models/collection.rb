@@ -6,6 +6,8 @@ class Collection < ActiveRecord::Base
 
   validates :title, :content, :place, :starttime, :date, :capacity, presence: true
 
+  mount_uploader :picture, ImageUploader
+
   def self.search(search) #self.でクラスメソッドとしている
     if search
        # Controllerから渡されたパラメータが!= nilの場合は、titleカラムを部分一致検索
