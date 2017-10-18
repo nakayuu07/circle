@@ -104,9 +104,15 @@
   color: blue;
 }
 .show-picture img{
-  max-width: 750px;
+  max-width: 100%;
 }
 
 .show-picture{
   margin-top: 10px;
+}
+
+.joiner_index{
+  position: relative;
+  top: -850px;
+  left: -100px;
 }
