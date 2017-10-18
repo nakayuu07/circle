@@ -1,19 +1,20 @@
-<ul>
-  <% comments.each do |comment| %>
-    <% unless comment.id.nil? %>
-      <div class = "comment_form">
-        <p class = "comment_image left"><%= link_to user_path(comment.user.id) do %><%= profile_img(comment.user) %><% end %>
-        <%= comment.user.name %>さんがコメントしました。</p>
-        <div class = "center">
-          <p id="comment_area_<%= comment.id %>"><%= comment.content %></p>
-          <% if current_user.id == comment.user.id %>
-        <div>
-          <p class="right">
-            <%= link_to '', edit_collection_comment_path(collection, comment), remote: true, class: "fa fa-pencil-square-o fa-lg" %>
-            <%= link_to '', collection_comment_path(collection, comment), class: "fa fa-trash-o fa-lg", method: :delete, remote: true, data: { confirm: '本当に削除していいですか？' } %>
-          </p>
-        </div>
-      <% end %>
+<% comments.each do |comment| %>
+  <% unless comment.id.nil? %>
+    <div class = "comment_form">
+      <p class = "comment_image left"><%= link_to user_path(comment.user.id) do %>
+      <%= profile_img(comment.user) %>
+      <%= comment.user.name %><% end %>さんがコメントしました。</p>
+    </div>
+    <div class = "center commet_create">
+      <p id="comment_area_<%= comment.id %>"><%= comment.content %></p>
+      <% if current_user.id == comment.user.id %>
+    </div>
+    <div>
+      <p class="right">
+      <%= link_to '', edit_collection_comment_path(collection, comment), remote: true, class: "fa fa-pencil-square-o fa-lg" %>
+      <%= link_to '', collection_comment_path(collection, comment), class: "fa fa-trash-o fa-lg", method: :delete, remote: true, data: { confirm: '本当に削除していいですか？' } %>
+      </p>
+    </div>
     <% end %>
   <% end %>
-</ul>
+<% end %>

@@ -13,13 +13,15 @@
         </div>
       <% end %>
 
-        <h1>新規イベント作成 </h1>
+        <h1 class = "blue" >※新規作成 </h1>
         <p class = "title"><%= f.text_field :title, size: "101", placeholder: "タイトル"%></p>
           <br>
         <p class = "content"><%= f.text_area :content, size: "100x30", placeholder: "内容" %></p>
           <br>
+        <h1 class = "blue" >※開催場所</h1><br>
         <p class = "place"><%= f.text_field :place, size: "101",placeholder: "場所" %></p>
-        <h1>イベント開催日時</h1>
+          <br>
+        <h1 class = "blue" >※開催日時</h1>
           <br>
         <p class = "date"><strong>日付：<%= f.date_field :date%></strong></p>
           <br>
@@ -27,12 +29,12 @@
           <br>
         <p class = "endtime"><strong>終了時間：<%= f.time_field :endtime%></strong></p>
           <br>
-        <h1>定員数</h1>
+        <h1 class = "blue" >※定員数</h1>
         <p class = "capacity"><%= f.text_field :capacity, placeholder: "定員" %>人</p><br>
-        <h1> イベントのイメージ写真</h1>
-        <p><%= f.file_field :picture %><p>
-           <%= f.hidden_field :picture_cache %>
-
+        <h1 class = "blue" >※イメージ写真</h1>
+        <p class = "form-picture"><%= event_img(@collection) if event_img(@collection) %></p>
+           <p><%= f.file_field :picture %></p>
+           <p><%= f.hidden_field :picture_cache %></p>
       <div class="Contribution">
         <%= f.submit '投稿',class: 'btn-success btn btn-lg' %>
       </div>

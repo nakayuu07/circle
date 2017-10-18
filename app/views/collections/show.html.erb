@@ -6,17 +6,19 @@
       <%= render partial: 'joins/join', locals: { join: @join, collection: @collection } %>
     </div>
 
-    <div class = "joiner">
-        <%= render partial: 'joins/index', locals: { collection: @collection } %>
+    <div class = "joiner ">
+      <%= render partial: 'joins/index', locals: { collection: @collection } %>
     </div>
 
     <div class = "collection-info">
+      <p class = "show-picture"><%= event_img(@collection) %></p>
       <p><strong>タイトル</strong></p>
-      <p class ="center" ><%= @collection.title %></p>
+      <p class = "center"><%= @collection.title %></p>
       <p><strong>内容</strong></p>
       <p><%= @collection.content %></p>
       <p><strong>場所：<%= @collection.place %></strong></p>
-      <p><strong>定員：<%= @collection.capacity %>名</strong></p>
+      <p><strong>参加者：<%= @collection.capacity %> /
+        <%= joins_counter(@collection.joins) %></strong></p>
       <p><strong>日付：<%= @collection.date %></strong></p>
       <p><strong>開始時間：<%= @collection.starttime%></strong></p>
       <p class = "show-endtime"><strong>終了時間：<%= @collection.endtime%></strong></p>

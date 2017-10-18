@@ -6,11 +6,6 @@
   color: red;
 }
 
-// .many_collection{
-//   margin-top: 10px;
-//   border-top: 1px solid gray;
-// }
-
 .right{
   text-align: right;
   margin-top: 0px;
@@ -32,26 +27,26 @@
 }
 
 .event-child {
-padding: 0.5em 1em;
-margin-left: 120px;
-margin-top: 30px;
-font-weight: bold;
-color: black;/*文字色*/ background: #FFF;
-border: solid 3px black;/*線*/ border-radius: 10px;/*角の丸み*/
+  padding: 0.3em 0.9em;
+  margin-top: 30px;
+  margin-bottom: 10px;
+  font-weight: bold;
+  color: black;/*文字色*/ background: white;
+  border: solid 2px gray;/*線*/
 }
 
-// .event-child a:hover { background-color: #247BA0;
-//  color:#222222; }
+.event-child a:hover { background-color: #247BA0;
+ color: blue; }
+
 
 .center{
   text-align: center;
 }
 
-
 .event-picture img{
-  width: 100px;
+  width: 150px;
   height: 120px;
-  border-radius: 30px;
+  margin-right: -13px;
 }
 
 .event-picture{
@@ -83,8 +78,6 @@ border: solid 3px black;/*線*/ border-radius: 10px;/*角の丸み*/
 }
 
 .Contribution{
-  position: relative;
-  top: -50px;
   left: 400px;
   margin-bottom: -50px;
 }
@@ -101,4 +94,19 @@ border: solid 3px black;/*線*/ border-radius: 10px;/*角の丸み*/
 
 .collection-info{
  text-align: left;
+}
+
+.form-picture img{
+  max-width: 400px
+}
+
+.blue{
+  color: blue;
+}
+.show-picture img{
+  max-width: 750px;
+}
+
+.show-picture{
+  margin-top: -90px;
 }
