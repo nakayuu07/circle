@@ -3,9 +3,9 @@
     <% if join.nil? && collection.joins.count < collection.capacity.to_i %>
       <%= link_to "参加する", collection_joins_path(collection), method: :post, class: 'btn btn-danger' %>
     <% elsif join.nil? && collection.joins.count == collection.capacity.to_i %>
-      <%= render partial: 'joins/full' %>
+      <p>満員</p>
     <% else %>
-      <%= link_to "参加をやめる", collection_join_path(collection, join), method: :delete, class: 'btn btn-default' %>
+      <%= link_to "キャンセル", collection_join_path(collection, join), method: :delete, class: 'btn btn-default' %>
     <% end %>
   <% end %>
 </div>

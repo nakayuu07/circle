@@ -5,3 +5,36 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+20.times do |n|
+  email = Faker::Internet.email
+  password = "password"
+  name = Faker::Name.name
+  uid = Faker::Twitter.status
+  provider = Faker::Twitter.status
+  avatar = Faker::Avatar.image
+  image_url = Faker::Avatar.image
+  user = User.create!(email: email,
+               password: password,
+               password_confirmation: password,
+               name: name,
+               uid: uid,
+               provider: provider,
+               avatar: avatar,
+               image_url: image_url
+               )
+  # collection = Collectionate(title: "あああ",
+  #               content: "hoge",
+  #               place: "渋谷",
+  #               starttime: 10:00
+  #               endtime: 12:00
+  #               capacity: 10
+  #               picture: picture
+  #               image
+  #               user_id: user.id
+  #              )
+  #   Comment.create(content: "sss",
+  #                  user_id: user.id,
+  #                  topic_id: topic.id
+  #                  )
+  end
