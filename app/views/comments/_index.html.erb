@@ -5,10 +5,10 @@
       <%= profile_img(comment.user) %>
       <%= comment.user.name %><% end %>さんがコメントしました。</p>
     </div>
-    <div class = "center commet_create">
+    <div class = "center">
       <p id="comment_area_<%= comment.id %>"><%= comment.content %></p>
-      <% if current_user.id == comment.user.id %>
     </div>
+    <% if current_user.id == comment.user.id %>
     <div>
       <p class="right">
       <%= link_to '', edit_collection_comment_path(collection, comment), remote: true, class: "fa fa-pencil-square-o fa-lg" %>

@@ -1,55 +1,43 @@
 <div class="container">
-  <div class="wrapper col-md-8  col-sm-6 col-ex-4">
-
-    <p id="notice"><%= notice %></p>
-    <div class = "collection-info">
-      <p class = "show-picture"><%= event_img(@collection) %></p>
-      <p><strong>タイトル</strong></p>
-      <p class = "center"><%= @collection.title %></p>
-      <p><strong>内容</strong></p>
-      <p><%= @collection.content %></p>
-      <p><strong>場所：<%= @collection.place %></strong></p>
-      <p><strong>参加者：<%= @collection.capacity %> /
-        <%= joins_counter(@collection.joins) %></strong></p>
-      <p><strong>日付：<%= @collection.date %></strong></p>
-      <p><strong>開始時間：<%= @collection.starttime%></strong></p>
-      <p class = "show-endtime"><strong>終了時間：<%= @collection.endtime%></strong></p>
-      <div class = "show-user-info">
-        <p class = "right"><strong>投稿者：<%= link_to user_path(@collection.user.id) do %><%= @collection.user.name %></strong></p>
-        <% end %>
-        <p class = "user-picture right"><%= profile_img(@collection.user) %></strong></p>
-      </div>
-      <% if current_user.id == @collection.user.id %>
-        <p class = "show-icon"><%= link_to " ", edit_collection_path(@collection),class:'fa fa-pencil-square-o fa-lg'%>
+  <div class = "row">
+    <div class="wrapper col-md-8  col-sm-4 col-ex-2">
+      <p id="notice"><%= notice %></p>
+      <div class = "collection-info">
+        <p class = "show-picture"><%= event_img(@collection) %></p>
+        <p><strong>タイトル</strong></p>
+        <p class = "center"><strong><%= @collection.title %></strong></p>
+        <p><strong>内容</strong></p>
+        <p><%= @collection.content %></p>
+        <p><strong>場所：<%= @collection.place %></strong></p>
+        <p><strong>場所URL：<%= link_to @collection.url, @collection.url %></p>
+        <p><strong>参加者：<%= @collection.capacity %> /
+          <%= joins_counter(@collection.joins) %></strong></p>
+        <p><strong>日付：<%= @collection.date %></strong></p>
+        <p><strong>開始時間：<%= @collection.starttime%></strong></p>
+        <p class = "show-endtime"><strong>終了時間：<%= @collection.endtime%></strong></p>
+        <div class = "show-user-info">
+          <p class = "right"><strong>投稿者：<%= link_to user_path(@collection.user.id) do %><%= @collection.user.name %></strong></p>
+          <% end %>
+          <p class = "user-picture right"><%= profile_img(@collection.user) %></strong></p>
+        </div>
+        <% if current_user.id == @collection.user.id %>
+          <p class = "show-icon"><%= link_to " ", edit_collection_path(@collection),class:'fa fa-pencil-square-o fa-lg'%>
         <%= link_to " ", @collection, method: :delete, data: { confirm: '本当に削除してもいいですか?' },class: 'glyphicon glyphicon-trash' %></p>
-      <% end %>
+        <% end %>
+        <p class = "comments"><strong>[コメント一覧]</strong></p>
+        <div id="comments_area">
+          <%= render partial: 'comments/index', locals: { comments: @comments, collection: @collection } %>
+        </div>
+          <%= render partial: 'comments/form', locals: { comment: @comment, collection: @collection } %>
+      </div>
     </div>
-  </div>
-</div>
-
-
-<div class = "joiner_index">
-  <div class="wrapper col-md-2 col-md-offset-2 col-sm-6 col-ex-4">
-    <div id = "join_area">
-      <%= render partial: 'joins/join', locals: { join: @join, collection: @collection } %>
+    <div class="col-md-3 col-md-offset-1 col-sm-6 col-ex-4">
+      <div id = "join_area">
+        <%= render partial: 'joins/join', locals: { join: @join, collection: @collection } %>
+      </div>
+      <div class = "joiner ">
+        <%= render partial: 'joins/index', locals: { collection: @collection } %>
+      </div>
     </div>
-
-    <div class = "joiner ">
-      <%= render partial: 'joins/index', locals: { collection: @collection } %>
-    </div>
-  </div>
-</div>
-
-    <!-- <% if current_user.id == @collection.user.id %>
-      <p class = "show-icon"><%= link_to " ", edit_collection_path(@collection),class:'fa fa-pencil-square-o fa-lg'%>
-      <%= link_to " ", @collection, method: :delete, data: { confirm: '本当に削除してもいいですか?' },class: 'glyphicon glyphicon-trash' %></p>
-    <% end %> -->
-<div class="container">
-  <div class="comment_index col-md-8  col-sm-6 col-ex-4">
-    <p class = "comments"><strong>[コメント一覧]</strong></p>
-    <div id="comments_area">
-      <%= render partial: 'comments/index', locals: { comments: @comments, collection: @collection } %>
-    </div>
-      <%= render partial: 'comments/form', locals: { comment: @comment, collection: @collection } %>
   </div>
 </div>
