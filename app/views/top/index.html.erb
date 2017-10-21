@@ -1,22 +1,35 @@
 <p id="notice"><%= notice %></p>
 
 <% if user_signed_in? %>
-  <div class = "description">
-    <p class = "login_title"> circle </p>
-    <h5>このアプリは幹事様、イベントを開催したい人向けのwebサービスです。</h5><br>
-    <h5>こんなイベントやってみたい、こんなイベントがあるなら行ってみたい。</h5><br>
-    <h5>といったイベントを通し新たなコミュニティーを作ることを目的としたwebサービスです。</h5><br>
+  <div class = "container">
+    <div class = "row">
+      <div class = "col-md-12">
+        <div class = "description">
+          <p class = "login_title"> circle </p>
+          <h5>このアプリは幹事様、イベントを開催したい人向けのwebサービスです。</h5><br>
+          <h5>こんなイベントやってみたい、こんなイベントがあるなら行ってみたい。</h5><br>
+          <h5>といったイベントを通し新たなコミュニティーを作ることを目的としたwebサービスです。</h5><br>
+        </div>
+      </div>
+    </div>
+    <div class = "row">
+      <div class = "col-md-12">
+        <h2 class = "center">~~~過去に投稿されたイベント~~~</h2>
+        <%= render partial: 'top/index', locals: { collection: @collection } %>
+      </div>
+    </div>
   </div>
+</div>
 <% else %>
   <body id = "introduce">
-  <div class = "before_description">
-    <p class = "top_title"> circle </p>
-    <p class = "explain">このアプリは幹事様、イベントを開催したい人向けのwebサービスです。</p><br>
-    <p class = "explain">こんなイベントやってみたい、こんなイベントがあるなら行ってみたい。</p><br>
-    <p class = "explain">といったイベントを通し新たなコミュニティーを作ることを目的としたwebサービスです。</p><br>
-    <p class = "explain">circleで新たなコミュニティーを作りませんか?</p><br>
-    <p class = "top_join"><%= link_to "sign up",new_user_registration_path, class: "btn btn-danger btn-lg" %></p>
-    <p class = "top_login"><%= link_to "login", new_user_session_path, class: "btn btn- btn-success btn-lg" %></p>
-  </div>
-<% end %>
+    <div class = "before_description">
+      <p class = "top_title"> circle </p>
+      <p class = "explain">このアプリは幹事様、イベントを開催したい人向けのwebサービスです。</p><br>
+      <p class = "explain">こんなイベントやってみたい、こんなイベントがあるなら行ってみたい。</p><br>
+      <p class = "explain">といったイベントを通し新たなコミュニティーを作ることを目的としたwebサービスです。</p><br>
+      <p class = "explain">circleで新たなコミュニティーを作りませんか?</p><br>
+      <p class = "top_join"><%= link_to "sign up",new_user_registration_path, class: "btn btn-danger btn-lg" %></p>
+      <p class = "top_login"><%= link_to "login", new_user_session_path, class: "btn btn- btn-success btn-lg" %></p>
+    </div>
+  <% end %>
 </body>
