@@ -65,21 +65,8 @@
   top: -100px;
 }
 
-.starttime{
-    position: relative;
-    top: -70px;
-    left: 220px;
-}
-.endtime{
-  position: relative;
-  top: -140px;
-  left: 400px;
-  margin-bottom: -150px;
-}
-
-.Contribution{
-  left: 400px;
-  margin-bottom: -50px;
+.content{
+  margin-left: 100px;
 }
 
 .show-icon{
@@ -101,7 +88,7 @@
 }
 
 .blue{
-  color: blue;
+  color: green;
 }
 .show-picture img{
   max-width: 750px;
@@ -110,4 +97,8 @@
 
 .show-picture{
   margin-top: 10px;
+}
+
+#collection_picture{
+  text-align: center;
 }
