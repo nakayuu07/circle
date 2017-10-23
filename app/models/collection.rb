@@ -6,6 +6,8 @@ class Collection < ActiveRecord::Base
 
   validates :title, :content, :place, :starttime, :date, :capacity, presence: true
 
+  validates :capacity, numericality: { only_integer: true }
+
   mount_uploader :picture, ImageUploader
 
   def self.search(search) #self.でクラスメソッドとしている

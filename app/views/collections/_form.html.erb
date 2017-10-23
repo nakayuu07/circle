@@ -41,9 +41,9 @@
   <div class = "row">
     <div class = "col-md-12">
       <div class = "center">
-        <h1 class = "blue" >※イメージ写真</h1>
+        <h1 class = "blue form_photo" >※イメージ写真</h1>
         <p class = "form-picture"><%= event_img(@collection) if event_img(@collection) %></p>
-        <p><%= f.file_field :picture %></p>
+        <p><%= f.file_field :picture, class: "choise_file" %></p>
         <p><%= f.hidden_field :picture_cache %></p>
         <div>
           <p><%= f.submit '投稿',class: 'btn-success btn btn-block' %></p><br>
