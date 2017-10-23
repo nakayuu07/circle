@@ -1,12 +1,13 @@
-<div class="container">
-  <div class="wrapper col-md-4 col-md-offset-4 col-sm-10">
+<body id = "introduce">
+  <div class="container">
+    <div class="wrapper col-md-4 col-md-offset-4 col-sm-10">
 
-    <h1 class = "main-title">circle</h1>
+      <h1 class = "main-title">circle</h1>
 
-    <%= alert %>
+      <%= alert %>
 
-    <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-      <%= devise_error_messages! %>
+      <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+        <%= devise_error_messages! %>
 
       <div class="field">
         <p class = "devise-mail"><%= f.email_field :email, autofocus: true, class: "form-control", placeholder: "メールアドレス" %>
@@ -26,10 +27,13 @@
       <div class="actions">
         <p><%= f.submit "ログイン", class: "btn btn-primary btn-success btn-block" %></p>
       </div>
-    <% end %>
-      <h4 class = "twitter"><%= link_to "twitterログイン", user_twitter_omniauth_authorize_path,class: "btn btn-info btn-block" %></h4>
-      <h4 class = "facebook"><%= link_to "facebookログイン",  user_facebook_omniauth_authorize_path,class:"btn btn-primary btn-block"%></h4>
-      <h4 class = "forget_password"><%= link_to "パスワードをお忘れの方",new_user_password_path %></h4>
-      <h4><%= link_to "新規会員登録",new_user_registration_path %>
+      <% end %>
+      <div class = "white">
+        <h4 class = "twitter"><%= link_to "twitterログイン", user_twitter_omniauth_authorize_path,class: "btn btn-info btn-block" %></h4>
+        <h4 class = "facebook"><%= link_to "facebookログイン",  user_facebook_omniauth_authorize_path,class:"btn btn-primary btn-block"%></h4>
+        <h4 class = "forget_password"><%= link_to "パスワードをお忘れの方",new_user_password_path %></h4>
+        <h4><%= link_to "新規会員登録",new_user_registration_path %>
       </div>
-</div>
+    </div>
+  </div>
+</body>

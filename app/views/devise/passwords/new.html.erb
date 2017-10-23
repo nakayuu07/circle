@@ -1,23 +1,26 @@
-<div class="container">
-  <div class="wrapper col-md-4 col-md-offset-4 col-sm-10">
+<body id = "introduce">
+  <div class="container">
+    <div class="wrapper col-md-4 col-md-offset-4 col-sm-10">
 
-    <h1 class = "main-title">circle</h1>
+      <h1 class = "main-title">circle</h1>
 
-    <%= alert %>
+      <%= alert %>
 
-    <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
-      <%= devise_error_messages! %>
+      <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
+        <%= devise_error_messages! %>
 
-      <div class="field">
-        <p class = "devise-mail"><%= f.email_field :email, autofocus: true, class: "form-control", placeholder: "メールアドレス" %></p>
+        <div class="field">
+          <p class = "devise-mail"><%= f.email_field :email, autofocus: true, class: "form-control", placeholder: "メールアドレス" %></p>
+        </div>
+
+        <div class="actions">
+          <p><%= f.submit "再設定メールを送信する", class: "btn btn-primary btn-block" %></p>
+        </div>
+      <% end %>
+      <div class = "white">
+        <p><%= link_to "初めてのご利用ですか?", new_user_registration_path %></p>
+        <p><%= link_to "ログイン", new_user_session_path%></p>
       </div>
-
-      <div class="actions">
-        <p><%= f.submit "再設定メールを送信する", class: "btn btn-primary btn-block" %></p>
-      </div>
-    <% end %>
-
-  <p><%= link_to "初めてのご利用ですか?", new_user_registration_path %></p>
-  <p><%= link_to "ログイン", new_user_session_path%></p>
+    </div>
   </div>
-</div>
+</body>

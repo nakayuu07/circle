@@ -32,9 +32,8 @@ body{
 }
 
 .search{
-  position: absolute;
-  left: 1200px;
-  top: 10px;
+  margin-left: 600px;
+  margin-top: 10px;
 }
 
 .top_title{
@@ -86,4 +85,8 @@ color: #fff100;
 
 #notice{
   color: green;
+}
+
+.have_account{
+  color: #FFFAFA;
 }
