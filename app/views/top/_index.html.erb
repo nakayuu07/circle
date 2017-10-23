@@ -5,7 +5,7 @@
     <p>場所:<%= collection.place %></p>
     <p>日付:<%= collection.date %></p>
     <p>開始時間:<%= collection.starttime %></p>
-    <p class = "event-picture"><%= image_tag collection.picture %></p>
+    <p class = "event-picture"><%= event_img(collection) %></p>
   <% end %>
   </div>
 <% end %>
