@@ -10,12 +10,11 @@ class Collection < ActiveRecord::Base
 
   mount_uploader :picture, ImageUploader
 
-  def self.search(search) #self.でクラスメソッドとしている
+  def self.search(search)
     if search
-       # Controllerから渡されたパラメータが!= nilの場合は、titleカラムを部分一致検索
       Collection.where(['title LIKE ?',"%#{search}%"])
     else
-      Collection.all #全て表示。
+      Collection.all
     end
   end
 end
