@@ -13,8 +13,8 @@
         <p><strong>参加者：<%= @collection.capacity %> /
           <%= joins_counter(@collection.joins) %></strong></p>
         <p><strong>日付：<%= @collection.date %></strong></p>
-        <p><strong>開始時間：<%= @collection.starttime.to_s %></strong></p>
-        <p class = "show-endtime"><strong>終了時間：<%= @collection.endtime.to_s %></strong></p>
+        <p><strong>開始時間：<%= @collection.starttime %></strong></p>
+        <p class = "show-endtime"><strong>終了時間：<%= @collection.endtime %></strong></p>
         <div class = "show-user-info">
           <p class = "right"><strong>投稿者：<%= link_to user_path(@collection.user.id) do %><%= @collection.user.name %></strong></p>
           <% end %>

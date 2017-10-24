@@ -25,9 +25,9 @@
         <br>
       <p class = "date"><strong>日付：<%= f.date_field :date%></strong></p>
         <br>
-      <p class = "starttime"><strong>開始時間：<%= f.time_field :starttime%></strong></p>
+      <p class = "starttime"><strong>開始時間：<%= f.text_field :starttime%></strong></p>
         <br>
-      <p class = "endtime"><strong>終了時間：<%= f.time_field :endtime%></strong></p>
+      <p class = "endtime"><strong>終了時間：<%= f.text_field :endtime%></strong></p>
         <br>
       <h1 class = "blue" >※定員数</h1>
       <p class = "capacity"><%= f.text_field :capacity, placeholder: "定員" %>人</p>

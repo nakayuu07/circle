@@ -8,6 +8,8 @@ class Collection < ActiveRecord::Base
 
   validates :capacity, numericality: { only_integer: true }
 
+  # validates :starttime, :endtime, numericality: { only_integer:  true }
+
   mount_uploader :picture, ImageUploader
 
   def self.search(search)
