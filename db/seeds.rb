@@ -23,18 +23,18 @@
                avatar: avatar,
                image_url: image_url
                )
-  # collection = Collectionate(title: "あああ",
-  #               content: "hoge",
-  #               place: "渋谷",
-  #               starttime: 10:00
-  #               endtime: 12:00
-  #               capacity: 10
-  #               picture: picture
-  #               image
-  #               user_id: user.id
-  #              )
-  #   Comment.create(content: "sss",
-  #                  user_id: user.id,
-  #                  topic_id: topic.id
-  #                  )
+  collection = Collection.create!(title: "rails 勉強会",
+                content: "hoge",
+                place: "渋谷",
+                date: "2017-10-18",
+                starttime: "10:00",
+                endtime: "12:00",
+                capacity: "10",
+                user_id: user.id,
+                picture: image_url
+               )
+    Comment.c(content: "sss",
+                   user_id: user.id,
+                   collection_id: collection.id
+                   )
   end

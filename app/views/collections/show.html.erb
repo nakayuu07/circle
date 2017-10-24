@@ -13,15 +13,15 @@
         <p><strong>参加者：<%= @collection.capacity %> /
           <%= joins_counter(@collection.joins) %></strong></p>
         <p><strong>日付：<%= @collection.date %></strong></p>
-        <p><strong>開始時間：<%= @collection.starttime%></strong></p>
-        <p class = "show-endtime"><strong>終了時間：<%= @collection.endtime%></strong></p>
+        <p><strong>開始時間：<%= @collection.starttime.to_s %></strong></p>
+        <p class = "show-endtime"><strong>終了時間：<%= @collection.endtime.to_s %></strong></p>
         <div class = "show-user-info">
           <p class = "right"><strong>投稿者：<%= link_to user_path(@collection.user.id) do %><%= @collection.user.name %></strong></p>
           <% end %>
           <p class = "user-picture right"><%= profile_img(@collection.user) %></strong></p>
         </div>
         <% if current_user.id == @collection.user.id %>
-          <p class = "show-icon"><%= link_to " ", edit_collection_path(@collection),class:'fa fa-pencil-square-o fa-lg'%>
+          <p class = "show-icon"><%= link_to " ", edit_collection_path(@collection),class:'fa fa-pencil-square-o fa-lg',method: :get %>
         <%= link_to " ", @collection, method: :delete, data: { confirm: '本当に削除してもいいですか?' },class: 'glyphicon glyphicon-trash' %></p>
         <% end %>
         <p class = "comments"><strong>[コメント一覧]</strong></p>
