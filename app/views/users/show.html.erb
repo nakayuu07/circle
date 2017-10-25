@@ -1,6 +1,6 @@
 <div class="container">
   <div class = "row">
-    <div class="col-md-6 col-md-offset-3 col-sm-10 col-sm-offset-1">
+    <div class="col-md-8 col-sm-10 col-sm-offset-1">
       <h1 class="mypage-picture"><%= profile_img(@user) if profile_img(@user) %>
         <%= @user.name %>さんのページです</h1>
 
@@ -9,7 +9,8 @@
         <% end %>
 
       <ul class="nav nav-tabs">
-       	<li><a href="#user-event" data-toggle="tab">主催イベント</a></li>
+       	<li><a href="#user-event" data-toggle="tab">主催予定イベント</a></li>
+        <li class="active"><a href="#past-event" data-toggle="tab">過去主催したイベント</a></li>
        	<li class="active"><a href="#user-join" data-toggle="tab">参加予定イベント</a></li>
         <li class="active"><a href="#user-follwed" data-toggle="tab">フォロー一覧</a></li>
         <li class="active"><a href="#user-follower" data-toggle="tab">フォロワー一覧</a></li>
@@ -17,8 +18,18 @@
       <div class="tab-content">
 	    <div class="tab-pane" id="user-event">
         <% @collections.each do |collection| %>
-          <p><%= link_to collection_path(collection.id) do %>「<%= collection.title %>」</p>
+          <% unless timeover(collection) %>
+            <p><%= link_to collection_path(collection.id) do %>「<%= collection.title %>」</p>
+            <% end %>
           <% end %>
+        <% end %>
+      </div>
+      <div class="tab-pane" id="past-event">
+        <% @collections.each do |collection| %>
+          <% if timeover(collection) %>
+            <p><%= link_to collection_path(collection.id) do %>「<%= collection.title %>」</p>
+            <% end %>
+          <%end %>
         <% end %>
       </div>
   	  <div class="tab-pane active" id="user-join">
