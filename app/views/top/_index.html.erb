@@ -1,11 +1,13 @@
 <% @collection.each do |collection| %>
-  <div class="event-child col-md-4">
-  <%= link_to collection_path(collection) do %>
-    <p><%= collection.title %></p>
-    <p>場所:<%= collection.place %></p>
-    <p>日付:<%= collection.date %></p>
-    <p>開始時間:<%= collection.starttime %></p>
-    <p class = "event-picture"><%= event_img(collection) %></p>
+  <% unless timeover(collection) %>
+    <div class="event-child col-md-4">
+      <%= link_to collection_path(collection) do %>
+        <p><%= collection.title %></p>
+        <p>場所:<%= collection.place %></p>
+        <p>日付:<%= collection.date %></p>
+        <p>開始時間:<%= collection.starttime %></p>
+        <p class = "event-picture"><%= event_img(collection) %></p>
+      <% end %>
+    </div>
   <% end %>
-  </div>
 <% end %>

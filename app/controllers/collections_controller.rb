@@ -1,5 +1,5 @@
 class CollectionsController < ApplicationController
-  before_action :set_collection, only: [:show, :edit, :update, :destroy]
+  before_action :set_collection, only: [:show, :edit, :update, :destroy, :close]
   before_action :authenticate_user!
 
   def index
@@ -10,6 +10,7 @@ class CollectionsController < ApplicationController
     @comment = @collection.comments.build
     @comments = @collection.comments
     @join = current_user.joins.find_by(collection_id: @collection.id)
+    @user = current_user
   end
 
   def new

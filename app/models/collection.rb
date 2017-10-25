@@ -18,3 +18,12 @@ class Collection < ActiveRecord::Base
     end
   end
 end
+
+#   def self.event_join(collection)
+#     join = collection.joins
+#     if join && collection.joins.count == collection.capacity.to_i && collection.user != @user
+#       return true
+#     end
+#     return false
+#   end
+# end
