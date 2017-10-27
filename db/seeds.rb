@@ -26,15 +26,11 @@
   collection = Collection.create!(title: "rails 勉強会",
                 content: "hoge",
                 place: "渋谷",
-                date: "2017-10-18",
+                date: "2017-10-28",
                 starttime: "10:00",
                 endtime: "12:00",
                 capacity: "10",
                 user_id: user.id,
                 picture: image_url
                )
-    Comment.c(content: "sss",
-                   user_id: user.id,
-                   collection_id: collection.id
-                   )
   end

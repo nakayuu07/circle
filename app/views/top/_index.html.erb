@@ -1,4 +1,4 @@
-<% @collection.each do |collection| %>
+<% @collections.each do |collection| %>
   <% unless timeover(collection) %>
     <div class="event-child col-md-4">
       <%= link_to collection_path(collection) do %>

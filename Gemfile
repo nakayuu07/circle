@@ -24,6 +24,8 @@ gem 'devise'
 
 gem 'faker'
 
+gem 'kaminari'
+
 group :development, :test do
 
 end
