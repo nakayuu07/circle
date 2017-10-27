@@ -1,9 +1,9 @@
 <div class="container">
   <p id="notice"><%= notice %></p>
     <% @collections.each do |collection| %>
-      <% unless timeover(collection) %>
+      <% unless collection.timeover? %>
       <%= link_to collection_path(collection) do %>
-      <div class="event-child col-md-4 col-sm-4 col-xs-6 ">
+      <div class="event-child col-md-5 col-sm-4 col-xs-6 ">
         <p><%= collection.title %></p>
         <p>場所:<%= collection.place %></p>
         <p>日付:<%= collection.date %></p>

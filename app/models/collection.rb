@@ -12,18 +12,16 @@ class Collection < ActiveRecord::Base
 
   def self.search(search)
     if search
-      Collection.where(['title LIKE ?',"%#{search}%"])
+      where(['title LIKE ?',"%#{search}%"])
+      where(['place LIKE ?',"%#{search}%"])
     else
-      Collection.all
+      all
+    end
+  end
+
+  def timeover?
+    if date < Date.today
+      return true
     end
   end
 end
-
-#   def self.event_join(collection)
-#     join = collection.joins
-#     if join && collection.joins.count == collection.capacity.to_i && collection.user != @user
-#       return true
-#     end
-#     return false
-#   end
-# end

@@ -85,8 +85,21 @@ color: #fff100;
 
 #notice{
   color: green;
+  font-size: 30px;
 }
 
 .have_account{
   color: #FFFAFA;
 }
+
+.top-child {
+  padding: 0.3em 0.9em;
+  margin-top: 30px;
+  margin-bottom: 10px;
+  font-weight: bold;
+  color: black;/*文字色*/ background: white;
+  border: solid 2px gray;/*線*/
+}
+
+.top-child a:hover { background-color: #247BA0;
+ color: blue; }

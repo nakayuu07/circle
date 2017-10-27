@@ -4,6 +4,9 @@ class CollectionsController < ApplicationController
 
   def index
     @collections = Collection.search(params[:search]).page(params[:page])
+    if Collection.search(params[:search]).empty?
+      redirect_to collections_path, notice: "検索結果はありません"
+    end
   end
 
   def show
