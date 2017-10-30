@@ -4,7 +4,7 @@ class CollectionsController < ApplicationController
 
   def index
     @collections = Collection.search(params[:search]).page(params[:page])
-    flash[:notice] = Collection.set_flash_message(params[:search])
+    flash.now[:notice] = Collection.set_flash_message(params[:search])
   end
 
   def show
