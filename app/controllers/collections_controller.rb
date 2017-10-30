@@ -1,12 +1,10 @@
 class CollectionsController < ApplicationController
-  before_action :set_collection, only: [:show, :edit, :update, :destroy, :close]
+  before_action :set_collection, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!
 
   def index
     @collections = Collection.search(params[:search]).page(params[:page])
-    if Collection.search(params[:search]).empty?
-      redirect_to collections_path, notice: "検索結果はありません"
-    end
+    flash[:notice] = Collection.set_flash_message(params[:search])
   end
 
   def show

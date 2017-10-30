@@ -17,7 +17,7 @@
       <li><%= link_to 'ユーザー情報', edit_user_registration_path,class: 'glyphicon glyphicon-user' %></li>
       <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete,class: 'glyphicon glyphicon-off' %></li>
       <li class = "search"><%= form_tag collections_path, :method => 'get' do %>
-        <%= text_field_tag :search, params[:search],placeholder: "キーワード検索" %>
+        <%= text_field_tag :search, params[:search],placeholder: "イベント名" %>
         <%= submit_tag "検索", :title => nil %></li>
       <% end %>
     </ul>

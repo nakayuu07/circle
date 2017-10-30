@@ -10,18 +10,27 @@ class Collection < ActiveRecord::Base
 
   mount_uploader :picture, ImageUploader
 
-  def self.search(search)
-    if search
-      where(['title LIKE ?',"%#{search}%"])
-      where(['place LIKE ?',"%#{search}%"])
-    else
-      all
-    end
-  end
-
   def timeover?
     if date < Date.today
       return true
+    else
+      false
+    end
+  end
+
+  def self.search(search)
+    if search
+      where(['title LIKE ?',"%#{search}%"]).where('date > ?', Date.today)
+    else
+      all.where('date > ?', Date.today)
+    end
+  end
+
+  def self.set_flash_message(params_search)
+    if search(params_search).empty?
+      "検索結果はありません"
+    else
+      nil
     end
   end
 end
