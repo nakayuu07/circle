@@ -22,7 +22,7 @@ class Collection < ActiveRecord::Base
     if search
       where(['title LIKE ?',"%#{search}%"]).where('date > ?', Date.today)
     else
-      all.where('date > ?', Date.today)
+      all.where('date >= ?', Date.today)
     end
   end
 
