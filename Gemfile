@@ -27,14 +27,23 @@ gem 'faker'
 gem 'kaminari'
 
 group :development, :test do
+  gem "rspec-rails"
+  gem "factory_girl_rails"
+  gem 'pry-rails'
+end
 
+group :test do
+  gem "capybara"
+  gem "database_cleaner"
+  gem "launchy"
+  gem "selenium-webdriver"
+  gem "timecop"
 end
 
 group :development do
 
   gem 'web-console', '~> 2.0'
   gem 'dotenv-rails'
-  gem 'pry-rails'
   gem 'spring'
   gem 'letter_opener_web'
 end
