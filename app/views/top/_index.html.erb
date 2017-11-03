@@ -1,5 +1,5 @@
 <% @collections.each do |collection| %>
-  <% unless timeover(collection) %>
+  <% unless collection.timeover? %>
     <div class="top-child col-md-4">
       <%= link_to collection_path(collection) do %>
         <p><%= collection.title %></p>
