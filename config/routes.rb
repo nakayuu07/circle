@@ -16,6 +16,7 @@ Rails.application.routes.draw do
   resources :collections do
    resources :comments
    resources :joins, only: [:create, :destroy]
+   resources :keeps, only: [:create, :destroy]
   end
 
   root 'top#index'

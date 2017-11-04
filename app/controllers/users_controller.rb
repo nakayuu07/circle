@@ -11,5 +11,6 @@ class UsersController < ApplicationController
     @joins = @user.joins.order("created_at desc")
     @follows = @user.followed_users
     @followed = @user.followers
+    @keeps = @user.keeps.order("created_at desc")
   end
 end

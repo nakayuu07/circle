@@ -1,0 +1,7 @@
+<% unless collection.user.id == current_user.id %>
+  <% if keep.nil? %>
+    <%= link_to '', collection_keeps_path(collection), method: :post, class: 'glyphicon glyphicon-star-empty btn btn-default' %>
+  <% else %>
+    <%= link_to '', collection_keep_path(collection, keep), method: :delete, class: 'glyphicon glyphicon-star btn btn-warning' %>
+  <% end %>
+<% end %>

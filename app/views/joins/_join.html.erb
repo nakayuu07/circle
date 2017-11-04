@@ -1,5 +1,5 @@
 <div class = "join">
-  <% unless collection.user == current_user %>
+  <% unless collection.user.id == current_user .id%>
     <% if join.nil? && collection.joins.count < collection.capacity.to_i %>
       <%= link_to "参加する", collection_joins_path(collection), method: :post, class: 'btn btn-danger' %>
     <% elsif join.nil? && collection.joins.count == collection.capacity.to_i %>

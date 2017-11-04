@@ -11,7 +11,7 @@ class CollectionsController < ApplicationController
     @comment = @collection.comments.build
     @comments = @collection.comments
     @join = current_user.joins.find_by(collection_id: @collection.id)
-    @user = current_user
+    @keep = current_user.keeps.find_by(collection_id: @collection.id)
   end
 
   def new
