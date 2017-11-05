@@ -10,7 +10,7 @@
         <p><strong>内容</strong></p>
         <p><%= @collection.content %></p>
         <p><strong>場所：<%= @collection.place %></strong></p>
-        <p><strong>場所URL：<%= link_to @collection.url, @collection.url %></p>
+        <p><strong>開催場所URL：<%= link_to @collection.url, @collection.url %></p>
         <p><strong>参加者：<%= joins_counter(@collection.joins) %> / <%= @collection.capacity %></strong></p>
         <p><strong>日付：<%= @collection.date %></strong></p>
         <p><strong>開始時間：<%= @collection.starttime %></strong></p>
@@ -25,7 +25,7 @@
         <p class = "show-icon"><%= link_to " ", edit_collection_path(@collection),class:'fa fa-pencil-square-o fa-lg',method: :get %>
         <%= link_to " ", @collection, method: :delete, data: { confirm: '本当に削除してもいいですか?' },class: 'glyphicon glyphicon-trash' %></p>
       <% else %>
-        <p class = "show-icon"><%= render partial: 'keeps/create', locals: { keep: @keep, collection: @collection } %></p>
+        <p class = "show-icon"><%= render partial: 'keeps/collection_keep', locals: { keep: @keep, collection: @collection } %></p>
       <% end %>
 
 
@@ -40,10 +40,10 @@
 
     <div class="col-md-3 col-md-offset-1 col-sm-6 col-ex-4">
       <div id = "join_area">
-        <%= render partial: 'joins/join', locals: { join: @join, collection: @collection } %>
+        <%= render partial: 'joins/collection_join', locals: { join: @join, collection: @collection } %>
       </div>
       <div class = "joiner ">
-        <%= render partial: 'joins/index', locals: { collection: @collection } %>
+        <%= render partial: 'joins/collection_index', locals: { collection: @collection } %>
       </div>
     </div>
   </div>
