@@ -17,7 +17,7 @@
 /tmp
 
 #uploader image
-  /public/uploads
+/public/uploads
 
 #dotenv-rails
 .env
