@@ -30,9 +30,10 @@ class Collection < ActiveRecord::Base
 
   def self.set_flash_message(params_search)
     if search(params_search).empty?
-      "検索結果はありません"
+      "イベントはありません"
     else
       nil
     end
   end
+
 end
