@@ -7,6 +7,8 @@ Rails.application.routes.draw do
     omniauth_callbacks: "users/omniauth_callbacks"
 }
 
+  mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
+
   resources :users, only: [:show]
 
   if Rails.env.development?
