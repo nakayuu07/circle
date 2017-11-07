@@ -3,7 +3,7 @@
     <% @collections.each do |collection| %>
       <% unless collection.timeover? %>
       <%= link_to collection_path(collection) do %>
-      <div class="event-child col-md-5 col-sm-4 col-xs-6 ">
+      <div class="event-child col-md-5 col-sm-12 col-xs-12">
         <p><%= collection.title %></p>
         <p>場所:<%= collection.place %></p>
         <p>日付:<%= collection.date %></p>
@@ -14,7 +14,7 @@
     <% end %>
   <% end %>
   <div class = "row">
-    <div class = "col-md-12 center">
+    <div class = "col-md-12 col-sm-12 col-xs-12 center">
       <%= paginate @collections %>
     </div>
   </div>

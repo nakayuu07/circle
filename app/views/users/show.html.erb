@@ -7,14 +7,14 @@
         <% if current_user.id != @user.id %>
           <p><%= render 'follow_form', user: @user %></p>
         <% end %>
-        
+
       <ul class="nav nav-tabs">
        	<li><a href="#user-event" data-toggle="tab">主催予定イベント</a></li>
-        <li class="active"><a href="#past-event" data-toggle="tab">過去主催したイベント</a></li>
-       	<li class="active"><a href="#user-join" data-toggle="tab">参加予定イベント</a></li>
-        <li class="active"><a href="#user-keep" data-toggle="tab">KEEPしたイベント</a></li>
-        <li class="active"><a href="#user-follwed" data-toggle="tab">フォロー一覧</a></li>
-        <li class="active"><a href="#user-follower" data-toggle="tab">フォロワー一覧</a></li>
+        <li><a href="#past-event" data-toggle="tab">過去主催したイベント</a></li>
+       	<li><a href="#user-join" data-toggle="tab">参加予定イベント</a></li>
+        <li><a href="#user-keep" data-toggle="tab">KEEPしたイベント</a></li>
+        <li><a href="#user-follwed" data-toggle="tab">フォロー一覧</a></li>
+        <li><a href="#user-follower" data-toggle="tab">フォロワー一覧</a></li>
       </ul>
       <div class = "tab-content">
 	    <div class = "tab-pane" id="user-event">
