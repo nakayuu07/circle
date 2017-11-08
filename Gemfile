@@ -32,6 +32,8 @@ gem 'cancan'
 
 gem 'fog'
 
+gem 'dotenv-rails'
+
 group :development, :test do
   gem "rspec-rails"
   gem "factory_girl_rails"
@@ -47,9 +49,7 @@ group :test do
 end
 
 group :development do
-
   gem 'web-console', '~> 2.0'
-  gem 'dotenv-rails'
   gem 'spring'
   gem 'letter_opener_web'
 end
