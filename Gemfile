@@ -30,6 +30,8 @@ gem 'rails_admin'
 
 gem 'cancan'
 
+gem 'fog-aws'
+
 group :development, :test do
   gem "rspec-rails"
   gem "factory_girl_rails"
