@@ -30,7 +30,7 @@ gem 'rails_admin'
 
 gem 'cancan'
 
-gem 'fog'
+gem 'fog-aws'
 
 gem 'dotenv-rails'
 
