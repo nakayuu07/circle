@@ -15,7 +15,7 @@ if Rails.env.production?
 
     config.fog_directory = ENV['S3_BUCKET_NAME']
     config.fog_public = true
-    config.cache_dir = "#{Rails.root}/tmp/uploads"
+    config.cache_dir = "#{Rails.root}/public/uploads"
   end
 else
   CarrierWave.configure do |config|
