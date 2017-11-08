@@ -30,7 +30,7 @@ gem 'rails_admin'
 
 gem 'cancan'
 
-gem 'fog-aws'
+gem 'fog'
 
 group :development, :test do
   gem "rspec-rails"
