@@ -35,8 +35,9 @@
       </div>
   	  <div class = "tab-pane join" id="user-join">
         <% @joins.each do |join| %>
-            <%= link_to collection_path(join.collection.id) do %><p>「<%= join.collection.title %>」</p>
-            <% end %>
+          <%if join.collection %>
+              <%= link_to collection_path(join.collection.id) do %><p>「<%= join.collection.title %>」</p><% end %>
+          <% end %>
         <% end %>
       </div>
       <div class = "tab-pane keep" id = "user-keep">
