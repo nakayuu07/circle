@@ -12,7 +12,6 @@ module ApplicationHelper
 
   def event_img(collection)
     return image_tag(collection.picture, alt: collection.title) if collection.picture?
-
     if collection.picture.blank?
       img_url = 'no_image.png'
     end
