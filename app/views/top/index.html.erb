@@ -1,9 +1,9 @@
-<p id="notice"><%= notice %></p>
-
 <% if user_signed_in? %>
   <div class = "container">
     <div class = "row">
-      <div class = "col-md-12">
+      <div class = "col-md-12 col-sm-12 col-xs-12">
+        <p id="notice"><%= notice %></p>
+
         <div class = "description">
           <p class = "login_title"> circle </p>
           <h5>このアプリは幹事様、イベントを開催したい人向けのwebサービスです。</h5><br>
@@ -13,7 +13,7 @@
       </div>
     </div>
     <div class = "row">
-      <div class = "col-md-12">
+      <div class = "col-md-12 col-sm-12 col-xs-12">
         <h2 class = "center">~~~現在投稿されてるイベント~~~</h2>
         <%= render partial: 'top/index', locals: { collection: @collection } %>
       </div>

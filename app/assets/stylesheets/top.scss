@@ -3,38 +3,86 @@ header {
   background-color: gray;
   height: 48px;
 }
-
-header ul {
+//
+.search_form {
   margin: 0 auto;
   list-style: none;
+  margin-top: 15px;
+  margin-left: 15px;
 }
 
-header ul a {
-  display: block;
-  padding: 15px;
-  text-decoration: none;
-  color: white;
-}
+// header ul a {
+//   display: block;
+//   padding: 15px;
+//   text-decoration: none;
+//   color: white;
+// }
+//
+// header li {
+//   float: left;
+//   width: auto;
+// }
+//
+// header ul:after {
+//   content: "";
+//   display: block;
+//   clear: both;
+// }
 
-header li {
-  float: left;
-  width: auto;
+.navbar-default {
+    border: 0;
 }
-
-header ul:after {
-  content: "";
-  display: block;
-  clear: both;
+.navbar {
+    background-color: transparent;
+    color: black;
+    margin-bottom: 0px;
+}
+.navbar-default {
+  .navbar-brand {
+    color: #ccc;
+    &:hover {
+      color: white;
+    }
+  }
+  .navbar-nav > li > a {
+    color: #ccc;
+    &:hover, &:focus {
+      color: white;
+    }
+  }
+  .navbar-nav > .open > a {
+    background-color: transparent;
+    color: white;
+    &:hover, &:focus {
+      background-color: transparent;
+      color: white;
+    }
+  }
+}
+@media (max-width: 767px) {
+.navbar-default .navbar-nav .open .dropdown-menu > li > a {
+    color: #ccc;
+    text-align: center;
+    &:hover, &:focus {
+      color: white;
+    }
+  }
+  .navbar-default .navbar-toggle {
+    background-color: transparent;
+    &:hover, &:focus {
+      background-color: transparent;
+    }
+  }
 }
 
 body{
   margin: 0px;
 }
 
-.search{
-  margin-top: 10px;
-  margin-left: 600px;
-}
+// .search{
+//   margin-top: 10px;
+//   margin-left: 600px;
+// }
 
 .top_title{
 text-align: center;

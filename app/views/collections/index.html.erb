@@ -3,7 +3,7 @@
     <% @collections.each do |collection| %>
       <% unless collection.timeover? %>
       <%= link_to collection_path(collection) do %>
-      <div class="event-child col-md-5 col-sm-12 col-xs-12">
+      <div class="event-child col-md-6 col-sm-12 col-xs-12">
         <p><%= collection.title %></p>
         <p>場所:<%= collection.place %></p>
         <p>日付:<%= collection.date %></p>
