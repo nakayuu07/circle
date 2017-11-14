@@ -1,4 +1,8 @@
 <div class="container">
+  <li class = "search_form"><%= form_tag collections_path, class: 'search', :method => 'get' do %>
+    <%= text_field_tag :search, params[:search], placeholder: "イベント名" %>
+    <%= submit_tag "検索",:title => nil %></li>
+  <% end %>
   <p id="notice"><%= notice %></p>
     <% @collections.each do |collection| %>
       <% unless collection.timeover? %>
