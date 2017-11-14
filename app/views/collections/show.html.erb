@@ -17,7 +17,7 @@
         <p class = "show-endtime"><strong>終了時間：<%= @collection.endtime %></strong></p>
       <div class = "show-user-info">
         <p class = "user-picture right"><%= profile_img(@collection.user) %></strong></p>
-        <p class = "right"><strong>投稿者：<%= link_to user_path(@collection.user.id) do %><%= @collection.user.name %></strong></p>
+        <p class = "right"><strong><%= link_to user_path(@collection.user.id) do %><%= @collection.user.name %></strong></p>
         <% end %>
       </div>
 
