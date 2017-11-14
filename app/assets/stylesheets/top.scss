@@ -2,6 +2,9 @@ header {
   width: 100%;
   background-color: DimGray;
   height: 48px;
+  position: relative;
+  display: block;
+  z-index: 1;
 }
 //
 .search_form {
@@ -11,16 +14,14 @@ header {
   margin-left: 15px;
 }
 
-.navbar-toggle{
-  z-index: 1;
-  position: relative;
-}
+
 
 .navbar-nav > li{
       position: relative;
       display: block;
       z-index: 1;
       background: #666;
+
     }
 .navbar-default {
     border: 0;
