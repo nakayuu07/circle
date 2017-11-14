@@ -1,6 +1,6 @@
 <div class="container">
   <div class = "row">
-    <div class="wrapper col-md-8  col-sm-7 col-xs-7">
+    <div class="wrapper col-md-8  col-sm-8">
       <p id="notice"><%= notice %></p>
 
       <div class = "collection-info">
@@ -16,18 +16,19 @@
         <p><strong>日付：<%= @collection.date %></strong></p>
         <p><strong>開始時間：<%= @collection.starttime %></strong></p>
         <p class = "show-endtime"><strong>終了時間：<%= @collection.endtime %></strong></p>
-      <div class = "show-user-info">
+      <div class = "show_user_info">
         <p class = "user-picture">主催者: <strong><%= link_to user_path(@collection.user.id) do %><%= @collection.user.name %></strong>
           <%= profile_img(@collection.user) %></p>
         <% end %>
       </div>
-
-      <% if @collection.user.id == current_user.id %>
-        <p><%= link_to " ", edit_collection_path(@collection),class:'fa fa-pencil-square-o fa-lg',method: :get %>
-        <%= link_to " ", @collection, method: :delete, data: { confirm: '本当に削除してもいいですか?' },class: 'glyphicon glyphicon-trash' %></p>
-      <% else %>
-        <p class = "center"><%= render partial: 'keeps/collection_keep', locals: { keep: @keep, collection: @collection } %></p>
-      <% end %>
+      <div class = "show_icon">
+        <% if @collection.user.id == current_user.id %>
+          <p><%= link_to " ", edit_collection_path(@collection),class:'fa fa-pencil-square-o fa-lg',method: :get %>
+          <%= link_to " ", @collection, method: :delete, data: { confirm: '本当に削除してもいいですか?' },class: 'glyphicon glyphicon-trash' %></p>
+        <% else %>
+          <p><%= render partial: 'keeps/collection_keep', locals: { keep: @keep, collection: @collection } %></p>
+        <% end %>
+      </div>
 
 
 
@@ -39,7 +40,7 @@
       </div>
     </div>
 
-    <div class="col-md-3  col-sm-5 col-ex-5 center">
+    <div class="col-md-3  col-sm-3 center">
       <div id = "join_area">
         <%= render partial: 'joins/collection_join', locals: { join: @join, collection: @collection } %>
       </div>
