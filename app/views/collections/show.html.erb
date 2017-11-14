@@ -1,6 +1,6 @@
 <div class="container">
   <div class = "row">
-    <div class="wrapper col-md-8  col-sm-8 col-xs-8">
+    <div class="wrapper col-md-8  col-sm-12 col-xs-12">
       <p id="notice"><%= notice %></p>
 
       <div class = "collection-info">
@@ -38,11 +38,11 @@
       </div>
     </div>
 
-    <div class="col-md-3 col-md-offset-1 col-sm-4 col-ex-4">
+    <div class="col-md-3 col-md-offset-1 col-sm-12 col-ex-12 center">
       <div id = "join_area">
         <%= render partial: 'joins/collection_join', locals: { join: @join, collection: @collection } %>
       </div>
-      <div class = "joiner ">
+      <div class = "joiner">
         <%= render partial: 'joins/collection_index', locals: { collection: @collection } %>
       </div>
     </div>
