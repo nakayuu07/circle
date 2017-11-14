@@ -11,6 +11,12 @@ header {
   margin-left: 15px;
 }
 
+.navbar-nav > li{
+      position: relative;
+      display: block;
+      z-index: 1;
+      background: #666;
+    }
 .navbar-default {
     border: 0;
 }
@@ -40,13 +46,7 @@ header {
   }
 }
 
-.nav > li {
-    position: relative;
-    display: block;
-    z-index: 1;
-    background: #666;
-  }
-  
+
 @media (max-width: 767px) {
 .navbar-default .navbar-nav .open .dropdown-menu > li > a {
     color: #ccc;
