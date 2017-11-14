@@ -1,6 +1,6 @@
 <div class= "container">
   <div class = "row">
-    <div class= "col-md-10 col-sm-12 col-xs-12">
+    <div class= "col-md-10 col-sm-110 col-xs-12">
       <h1 class = "mypage-picture"><%= profile_img(@user) if profile_img(@user) %>
         <%= @user.name %>さんのページです</h1>
 
@@ -13,8 +13,8 @@
         <li><a href="#past-event" data-toggle="tab">過去主催したイベント</a></li>
        	<li><a href="#user-join" data-toggle="tab">参加予定イベント</a></li>
         <li><a href="#user-keep" data-toggle="tab">KEEPしたイベント</a></li>
-        <li><a href="#user-follwed" data-toggle="tab">フォロー一覧</a></li>
         <li><a href="#user-follower" data-toggle="tab">フォロワー一覧</a></li>
+        <li><a href="#user-follwed" data-toggle="tab">フォロー一覧</a></li>
       </ul>
       <div class = "tab-content">
 	    <div class = "tab-pane" id="user-event">
@@ -35,8 +35,9 @@
       </div>
   	  <div class = "tab-pane join" id="user-join">
         <% @joins.each do |join| %>
-          <%if join.collection %>
+          <%if join.collection && unless timeover(join.collection) %>
               <%= link_to collection_path(join.collection.id) do %><p>「<%= join.collection.title %>」</p><% end %>
+          <% end %>
           <% end %>
         <% end %>
       </div>
@@ -46,16 +47,16 @@
           <% end %>
         <% end %>
       </div>
-      <div class = "tab-pane followed" id="user-follwed">
-        <% @follows.each do |follow| %>
-          <p><%= profile_img(follow) %>
-            <%= link_to user_path(follow.id) do %><%= follow.name %></p><% end %>
-        <% end %>
-      </div>
        <div class = "tab-pane followed" id="user-follower">
          <% @followed.each do |follow| %>
            <p><%= profile_img(follow) %>
            <%= link_to user_path(follow.id) do %><%= follow.name %></p><% end %>
+         <% end %>
+       </div>
+       <div class = "tab-pane followed" id="user-follwed">
+         <% @follows.each do |follow| %>
+           <p><%= profile_img(follow) %>
+             <%= link_to user_path(follow.id) do %><%= follow.name %></p><% end %>
          <% end %>
        </div>
      </div>
