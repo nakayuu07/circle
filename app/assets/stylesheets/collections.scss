@@ -57,13 +57,12 @@
 }
 
 .user-picture img{
-  max-width: 80px;
-  border-radius: 30px;
+  max-width: 40px;
+  border-radius: 20px;
 }
 
 .show-user-info{
-  position: relative;
-  top: -100px;
+
 }
 
 .content{
@@ -73,11 +72,6 @@
 .show-icon{
   text-align: right;
   margin-bottom: 70px;
-  margin-top: -100px;
-}
-
-.show-endtime{
-  margin-bottom: -10px;
 }
 
 .collection-info{
