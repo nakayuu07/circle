@@ -3,7 +3,7 @@
     <div class = "comment_form">
       <p class = "comment_image left"><%= link_to user_path(comment.user.id) do %>
       <%= profile_img(comment.user) %>
-      <%= comment.user.name %><% end %>さんがコメントしました。</p>
+      <%= comment.user.name %><% end %>さんのコメント</p>
     </div>
     <div class = "center">
       <p id="comment_area_<%= comment.id %>"><%= comment.content %></p>
