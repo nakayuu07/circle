@@ -11,6 +11,10 @@ header {
   margin-left: 15px;
 }
 
+.navbar-toggle{
+  z-index: 1;
+}
+
 .navbar-nav > li{
       position: relative;
       display: block;
