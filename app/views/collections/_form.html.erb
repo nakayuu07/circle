@@ -1,6 +1,6 @@
 <div class = "container">
   <div class = "row">
-    <div class="col-md-4 col-sm-12 col-xs-12">
+    <div class="col-md-4">
       <%= form_for(@collection) do |f| %>
         <% if @collection.errors.any? %>
           <div id="error_explanation">
@@ -35,9 +35,9 @@
       <p class = "capacity"><%= f.text_field :capacity, placeholder: "例)  10" %>人</p>
         <br>
     </div>
-    <div class = "col-md-8 col-sm-12 col-ex-6">
+    <div class = "col-md-8">
       <h1 class = "blue content">※内容</h1>
-      <p class = "content"><%= f.text_area :content, size: "105x35", placeholder: "持ち物、費用等" %></p>
+      <p class = "content"><%= f.text_area :content, size: "56x35", placeholder: "持ち物、費用等" %></p>
     </div>
   </div>
   <div class = "row">
