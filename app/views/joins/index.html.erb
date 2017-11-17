@@ -1,0 +1,11 @@
+<div class = "container">
+  <div class = "row">
+    <h1 class = "center">参加者一覧</h1>
+      <% @collection.join_users.each do |user| %>
+        <div class = "col-md-4 col-sm-4">
+        <p class = "joiner"><%= profile_img(user) %>
+        <%= link_to user_path(user.id) do %><%= user.name %></p><% end %>
+        </div>
+      <% end %>
+  </div>
+</div>

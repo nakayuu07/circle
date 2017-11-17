@@ -1,5 +1,13 @@
 <h3>※参加者一覧</h3>
-<% collection.join_users.each do |user| %>
-  <p><%= profile_img(user) %>
-  <%= link_to user_path(user.id) do %><%= user.name %></p><% end %>
+<% if collection.join_users.count <= 5 %>
+  <% collection.join_users.each do |user| %>
+    <p><%= profile_img(user) %>
+    <%= link_to user_path(user.id) do %><%= user.name %></p><% end %>
+  <% end %>
+<% elsif collection.join_users.count >= 5 %>
+  <% collection.join_users.first(5).each do |user| %>
+    <p><%= profile_img(user) %>
+    <%= link_to user_path(user.id) do %><%= user.name %></p><% end %>
+  <% end %>
+  <p><%= link_to "参加者全員はこちら", collection_joins_path(collection) %></p>
 <% end %>
