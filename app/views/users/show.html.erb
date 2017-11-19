@@ -17,6 +17,7 @@
         <li><a href="#user-follwed" data-toggle="tab">フォロー一覧</a></li>
       </ul>
       <div class = "tab-content">
+
 	    <div class = "tab-pane" id="user-event">
         <% @collections.each do |collection| %>
           <% unless timeover(collection) %>
@@ -25,6 +26,7 @@
           <% end %>
         <% end %>
       </div>
+
       <div class = "tab-pane" id="past-event">
         <% @collections.each do |collection| %>
           <% if timeover(collection) %>
@@ -33,6 +35,7 @@
           <%end %>
         <% end %>
       </div>
+
   	  <div class = "tab-pane join" id="user-join">
         <% @joins.each do |join| %>
           <%if join.collection && unless timeover(join.collection) %>
@@ -41,24 +44,28 @@
           <% end %>
         <% end %>
       </div>
+
       <div class = "tab-pane keep" id = "user-keep">
         <% @keeps.each do |keep| %>
           <%= link_to collection_path(keep.collection.id) do %><p>「<%= keep.collection.title %>」</p>
           <% end %>
         <% end %>
       </div>
+
        <div class = "tab-pane followed" id="user-follower">
          <% @followed.each do |follow| %>
            <p><%= profile_img(follow) %>
            <%= link_to user_path(follow.id) do %><%= follow.name %></p><% end %>
          <% end %>
        </div>
+
        <div class = "tab-pane followed" id="user-follwed">
          <% @follows.each do |follow| %>
            <p><%= profile_img(follow) %>
              <%= link_to user_path(follow.id) do %><%= follow.name %></p><% end %>
          <% end %>
        </div>
+
      </div>
    </div>
 </div>
