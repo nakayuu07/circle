@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+
    resources :relationships, only: [:create, :destroy]
 
   devise_for :users, controllers: {
@@ -19,6 +20,10 @@ Rails.application.routes.draw do
    resources :comments
    resources :joins, only: [:index, :create, :destroy]
    resources :keeps, only: [:create, :destroy]
+  end
+
+  resources :conversations do
+    resources :messages
   end
 
   root 'top#index'
