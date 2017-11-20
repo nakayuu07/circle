@@ -10,7 +10,7 @@
             <p class = "follow"><%= render partial: 'follow_form', locals: { user: @user } if signed_in? %></p>
           </div>
         <% else %>
-            <p class = "center"><%= link_to "プロフィール",edit_user_registration_path %></p>
+            <p class = "center"><%= link_to "プロフィール変更へ",edit_user_registration_path %></p>
         <% end %>
       </div>
     </div>
