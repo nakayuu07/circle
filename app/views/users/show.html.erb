@@ -4,11 +4,13 @@
       <h1 class = "mypage-picture center"><%= profile_img(@user) if profile_img(@user) %>
         <%= @user.name %>さんのページです</h1>
         <% if @user.id != current_user.id %>
-            <div class="center">
-              <!-- <%= link_to @user.name, @user %> -->
-              <p class = "mypage-massege"><%= link_to 'メッセージ', conversations_path(sender_id: current_user.id, recipient_id: @user.id), method: 'post', class:"btn btn-success glyphicon glyphicon-envelope"%></p>
-              <p class = "follow"><%= render partial: 'follow_form', locals: { user: @user } if signed_in? %></p>
-            </div>
+          <div class="center">
+            <!-- <%= link_to @user.name, @user %> -->
+            <p class = "mypage-massege"><%= link_to 'メッセージ', conversations_path(sender_id: current_user.id, recipient_id: @user.id), method: 'post', class:"btn btn-success glyphicon glyphicon-envelope"%></p>
+            <p class = "follow"><%= render partial: 'follow_form', locals: { user: @user } if signed_in? %></p>
+          </div>
+        <% else %>
+            <p class = "center"><%= link_to "プロフィール",edit_user_registration_path %></p>
         <% end %>
       </div>
     </div>
