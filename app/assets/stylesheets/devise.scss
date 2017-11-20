@@ -35,6 +35,7 @@
 .user-image img{
   max-width: 100%;
   border-radius: 20px;
+  margin-top: 20px;
 }
 
 .description{
@@ -47,4 +48,30 @@
 
 .white a{
   color: #FFFAFA;
+}
+
+.profile{
+  width: 350px;
+  background-color: gray;
+  border: 2px dashed #fff;
+  border-radius: 8px;
+  box-shadow: 0 0 0 4px gray;
+  color: #fff;
+  margin: 2em 0;
+  padding: 2em;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.mypage-massege{
+  margin-left: -180px;
+  margin-right: 50px;
+}
+
+.follow{
+  margin-top: -44px;
+}
+
+#new_relationship{
+  margin-left: 220px;
 }

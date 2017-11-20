@@ -2,7 +2,7 @@
   <%= link_to '以前のメッセージ', '?m=all' %>
 <% end %>
 
-<div class="ui segment">
+<div class="center">
   <% @messages.each do |message| %>
     <% if message.body %>
       <% user = User.find(message.user_id) %>
