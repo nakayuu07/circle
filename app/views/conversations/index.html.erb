@@ -1,12 +1,14 @@
 <div class="container">
   <div class = "row">
-    <div class = "col-md-12 col-sm-6 col-xs-12">
-      <h2 class = "center">メッセージ一覧</h2>
+    <h2 class = "center">メッセージ一覧</h2>
 
       <% @conversations.each do |conversation| %>
-          <% if conversation.target_user(current_user).present? %>
-              <%= link_to conversation.target_user(current_user).name, conversation_messages_path(conversation)%>
-          <% end %>
+        <% if conversation.target_user(current_user).present? %>
+          <div class = "col-md-4 col-sm-6 col-xs-12 center">
+            <p class = "user-picture"><%= profile_img(conversation.target_user(current_user)) %>
+            <%= link_to conversation.target_user(current_user).name, conversation_messages_path(conversation)%></p>
+          </div>
+        <% end %>
       <% end %>
     </div>
   </div>
