@@ -36,40 +36,80 @@
           <li><a href="#user-follwed" data-toggle="tab">フォロー一覧</a></li>
         </ul>
 
-        <div class = "tab-content">
+         <div class = "tab-content">
 
-    	    <div class = "tab-pane" id="user-event">
-            <% @collections.each do |collection| %>
-              <% unless timeover(collection) %>
-                <p><%= link_to collection_path(collection.id) do %>「<%= collection.title %>」</p>
+      	    <div class = "tab-pane" id="user-event">
+              <div class = "row">
+                <% @collections.each do |collection| %>
+                  <% unless timeover(collection) %>
+                    <div class= "event-child col-md-4 col-sm-4 col-xs-12">
+                      <%= link_to collection_path(collection) do %>
+                      <p><%= truncate(collection.title, length:12) %></p>
+                      <p>場所:<%= collection.place %></p>
+                      <p>日付:<%= collection.date %></p>
+                      <p>開始時間:<%= collection.starttime %></p>
+                      <p class = "event-picture"><%= event_img(collection) %></p>
+                      <% end %>
+                    </div>
+                    <% end %>
                 <% end %>
-              <% end %>
-            <% end %>
-          </div>
+              </div>
+            </div>
 
-          <div class = "tab-pane" id="past-event">
-            <% @collections.each do |collection| %>
-              <% if timeover(collection) %>
-                <p><%= link_to collection_path(collection.id) do %>「<%= collection.title %>」</p>
+            <div class = "tab-pane" id="past-event">
+              <div class = "row">
+                <% @collections.each do |collection| %>
+                  <% if timeover(collection) %>
+                    <div class= "event-child col-md-4 col-sm-4 col-xs-12">
+                      <%= link_to collection_path(collection) do %>
+                      <p><%= truncate(collection.title, length:12) %></p>
+                      <p>場所:<%= collection.place %></p>
+                      <p>日付:<%= collection.date %></p>
+                      <p>開始時間:<%= collection.starttime %></p>
+                      <p class = "event-picture"><%= event_img(collection) %></p>
+                      <% end %>
+                    </div>
+                  <%end %>
                 <% end %>
-              <%end %>
-            <% end %>
-          </div>
+              </div>
+            </div>
 
       	  <div class = "tab-pane join" id="user-join">
-            <% @joins.each do |join| %>
-              <%if join.collection && unless timeover(join.collection) %>
-                  <%= link_to collection_path(join.collection.id) do %><p>「<%= join.collection.title %>」</p><% end %>
+            <div class = "row">
+              <% @joins.each do |join| %>
+                <%if join.collection && unless timeover(join.collection) %>
+                  <div class= "event-child col-md-4 col-sm-4 col-xs-12">
+                    <%= link_to collection_path(join.collection.id) do %>
+                    <p><%= truncate(join.collection.title, length:12) %></p>
+                    <p>場所:<%= join.collection.place %></p>
+                    <p>日付:<%= join.collection.date %></p>
+                    <p>開始時間:<%= join.collection.starttime %></p>
+                    <p class = "event-picture"><%= event_img(join.collection) %></p>
+                    <% end %>
+                  </div>
+                <% end %>
               <% end %>
               <% end %>
-            <% end %>
+            </div>
           </div>
 
           <div class = "tab-pane keep" id = "user-keep">
-            <% @keeps.each do |keep| %>
-              <%= link_to collection_path(keep.collection.id) do %><p>「<%= keep.collection.title %>」</p>
+            <div class = "row">
+              <% @keeps.each do |keep| %>
+                <%if keep.collection && unless timeover(keep.collection) %>
+                  <div class= "event-child col-md-4 col-sm-4 col-xs-12">
+                    <%= link_to collection_path(keep.collection.id) do %>
+                    <p><%= truncate(keep.collection.title, length:12) %></p>
+                    <p>場所:<%= keep.collection.place %></p>
+                    <p>日付:<%= keep.collection.date %></p>
+                    <p>開始時間:<%= keep.collection.starttime %></p>
+                    <p class = "event-picture"><%= event_img(keep.collection) %></p>
+                    <% end %>
+                  </div>
+                <% end %>
               <% end %>
-            <% end %>
+              <% end %>
+            </div>
           </div>
 
            <div class = "tab-pane followed" id="user-follower">
@@ -85,6 +125,7 @@
                  <%= link_to user_path(follow.id) do %><%= follow.name %></p><% end %>
              <% end %>
            </div>
+
          </div>
        </div>
      </div>
