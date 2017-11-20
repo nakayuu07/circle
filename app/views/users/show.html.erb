@@ -113,20 +113,24 @@
           </div>
 
            <div class = "tab-pane followed" id="user-follower">
-             <% @followed.each do |follow| %>
-               <p><%= profile_img(follow) %>
-               <%= link_to user_path(follow.id) do %><%= follow.name %></p><% end %>
-             <% end %>
+             <div class = "row">
+               <% @followed.each do |follow| %>
+                 <div class= "col-md-4 col-sm-4 col-xs-12">
+                   <p><%= profile_img(follow) %>
+                   <%= link_to user_path(follow.id) do %><%= follow.name %></p><% end %>
+                 </div>
+               <% end %>
+             </div>
            </div>
 
            <div class = "tab-pane followed" id="user-follwed">
-             <% @follows.each do |follow| %>
-               <p><%= profile_img(follow) %>
-                 <%= link_to user_path(follow.id) do %><%= follow.name %></p><% end %>
-             <% end %>
+             <div class = "row">
+               <% @follows.each do |follow| %>
+                 <div class= "col-md-4 col-sm-4 col-xs-12">
+                   <p><%= profile_img(follow) %>
+                   <%= link_to user_path(follow.id) do %><%= follow.name %></p><% end %>
+                 </div>
+               <% end %>
+             </div>
            </div>
-
-         </div>
-       </div>
-     </div>
-   </div>
+  </div>
