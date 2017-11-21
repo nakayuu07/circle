@@ -7,6 +7,7 @@ class CommentsController < ApplicationController
     respond_to do |format|
       if @comment.save
         format.html { redirect_to collection_path(@collection), notice: 'コメントを投稿しました。' }
+
         format.js { render :index }
 
         unless @comment.collection.user_id == current_user.id
@@ -16,7 +17,7 @@ class CommentsController < ApplicationController
           NoticeMailer.sendmail_comment(@collection).deliver
         end
         Pusher.trigger("user_#{@comment.collection.user_id}_channel", 'notification_created', {
-        unread_counts: Notification.where(user_id: @comment.blog.user.id, read: false).count
+        unread_counts: Notification.where(user_id: @comment.collection.user.id, read: false).count
         })
       else
         format.html { render :new }
