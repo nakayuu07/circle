@@ -69,7 +69,14 @@ header {
     }
   }
 }
-
+.nav>li>a {
+    position: relative;
+    display: block;
+    padding: 10px 15px;
+    text-align: center;
+    margin-left: px;
+    margin-top: 5px;
+}
 
 body{
   margin: 0px;
@@ -142,4 +149,3 @@ color: #fff100;
 
 .top-child a:hover { background-color: #247BA0;
  color: blue; }
- 
