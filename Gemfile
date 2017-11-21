@@ -32,6 +32,8 @@ gem 'cancan'
 
 gem 'fog'
 
+gem 'pusher'
+
 gem 'dotenv-rails'
 
 group :development, :test do

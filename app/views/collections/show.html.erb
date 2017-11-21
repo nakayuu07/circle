@@ -26,7 +26,7 @@
           <p><%= link_to " ", edit_collection_path(@collection),class:'fa fa-pencil-square-o fa-lg',method: :get %>
           <%= link_to " ", @collection, method: :delete, data: { confirm: '本当に削除してもいいですか?' },class: 'glyphicon glyphicon-trash' %></p>
         <% else %>
-          <p><%= render partial: 'keeps/collection_keep', locals: { keep: @keep, collection: @collection } %></p>
+          <p><%= render partial: 'keeps/collection_keep', locals: { keep: @keep, collection: @collection } %>
         <% end %>
       </div>
 

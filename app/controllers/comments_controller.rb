@@ -2,11 +2,22 @@ class CommentsController < ApplicationController
   def create
     @comment = current_user.comments.build(comment_params)
     @collection = @comment.collection
+    @notification = @comment.notifications.build(user_id: @collection.user.id )
+
     respond_to do |format|
       if @comment.save
         format.html { redirect_to collection_path(@collection), notice: 'コメントを投稿しました。' }
         format.js { render :index }
-        NoticeMailer.sendmail_comment(@collection).deliver
+
+        unless @comment.collection.user_id == current_user.id
+          Pusher.trigger("user_#{@comment.collection.user_id}_channel", 'comment_created', {
+            message: 'あなたの作成したイベントにコメントが付きました'
+          })
+          NoticeMailer.sendmail_comment(@collection).deliver
+        end
+        Pusher.trigger("user_#{@comment.collection.user_id}_channel", 'notification_created', {
+        unread_counts: Notification.where(user_id: @comment.blog.user.id, read: false).count
+        })
       else
         format.html { render :new }
       end

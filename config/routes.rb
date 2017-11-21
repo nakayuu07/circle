@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
 
 
+  get 'notifications/index'
+
    resources :relationships, only: [:create, :destroy]
 
   devise_for :users, controllers: {

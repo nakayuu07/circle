@@ -12,6 +12,7 @@ class CollectionsController < ApplicationController
     @comments = @collection.comments
     @join = current_user.joins.find_by(collection_id: @collection.id)
     @keep = current_user.keeps.find_by(collection_id: @collection.id)
+    Notification.find(params[:notification_id]).update(read: true) if params[:notification_id]
   end
 
   def new
