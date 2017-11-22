@@ -16,9 +16,14 @@
        });
 
        var channel = pusher.subscribe("user_<%= current_user.id %>_channel");
-       channel.bind('comment_created', 'join_created' function(data) {
+       
+       channel.bind('join_created' , function(data) {
          alert(data.message);
        });
+       channel.bind('comment_created' , function(data) {
+         alert(data.message);
+       });
+
        channel.bind('notification_created', function(data) {
          $('#unread_count').html(data.unread_counts);
        });

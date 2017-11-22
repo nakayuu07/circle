@@ -9,11 +9,15 @@
                 <span class = "red"><strong>未読</strong></span>
               <% end %>
                 <p>
+                <% if notification.join == nil %>
                   <%= notification.comment.user.try(:name) %>さんが
                   あなたのイベント（<%= link_to "#{notification.comment.collection.title}", collection_path(notification.comment.collection, notification_id: notification.id) %>）にコメントしました。
+                <% else %>
+                  <%= notification.join.user.try(:name) %>さんが
+                  あなたのイベント（<%= link_to "#{notification.join.collection.title}", collection_path(notification.join.collection, notification_id: notification.id) %>）に参加しました。
+                <% end %>
                 </p>
-              <!-- <p><%= notification.created_at %></p> -->
-          </div>
+            </div>
           <% end %>
         </div>
       </div>
