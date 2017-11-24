@@ -15,8 +15,7 @@ class JoinsController < ApplicationController
 
      unless @join.collection.user_id == current_user.id
        Pusher.trigger("user_#{@join.collection.user_id}_channel", 'join_created', {
-            message: 'あなたの作成したイベントに新たな参加者がいます',
-            unread_counts: Notification.where(user_id: @join.collection.user.id, read: false).count
+            message: 'あなたの作成したイベントに新たな参加者がいます'
           })
      end
      Pusher.trigger("user_#{@join.collection.user_id}_channel", 'notification_created', {

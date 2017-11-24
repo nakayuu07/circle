@@ -23,11 +23,25 @@ class MessagesController < ApplicationController
     end
 
     @message = @conversation.messages.build
+    Notification.find(params[:notification_id]).update(read: true) if params[:notification_id]
   end
 
   def create
     @message = @conversation.messages.build(message_params)
+    message_received_user_id = @conversation.target_user(current_user).id
+    @notification = @message.notifications.build(user_id: message_received_user_id)
+
+    @notification.save
+
     if @message.save
+      unless message_received_user_id == current_user.id
+          Pusher.trigger("user_#{message_received_user_id}_channel", 'message_created', {
+            message: '新たなメッセージが届きました'
+          })
+      end
+      Pusher.trigger("user_#{message_received_user_id}_channel", 'notification_created', {
+      unread_counts: Notification.where(user_id: message_received_user_id, read: false).count
+      })
       redirect_to conversation_messages_path(@conversation)
     else
       redirect_to conversation_messages_path(@conversation)

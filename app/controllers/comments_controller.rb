@@ -16,10 +16,10 @@ class CommentsController < ApplicationController
           })
           NoticeMailer.sendmail_comment(@collection).deliver
         end
-        Pusher.trigger("user_#{@comment.collection.user_id}_channel", 'notification_created', {
-        unread_counts: Notification.where(user_id: @comment.collection.user.id, read: false).count
-        })
-      else
+          Pusher.trigger("user_#{@comment.collection.user_id}_channel", 'notification_created', {
+          unread_counts: Notification.where(user_id: @comment.collection.user.id, read: false).count
+          })
+       else
         format.html { render :new }
       end
     end
