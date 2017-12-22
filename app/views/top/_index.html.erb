@@ -1,6 +1,18 @@
+
 <% @collections.each do |collection| %>
     <div class="top-child col-md-4">
       <%= link_to collection_path(collection) do %>
+      <script>
+      $(function(){
+          $(window).load(function(){
+              var delaySpeed = 100;
+              var fadeSpeed = 5000;
+              $('p').each(function(i){
+                  $(this).delay(i*(delaySpeed)).css({display:'block',opacity:'0'}).animate({opacity:'1'},fadeSpeed);
+              });
+          });
+      });
+      </script>
         <p><%= truncate(collection.title, length:12) %></p>
         <p>場所:<%= collection.place %></p>
         <p>日付:<%= collection.date %></p>
