@@ -39,6 +39,17 @@
   <div class = "row">
     <div class = "col-md-12 col-sm-12 col-xs-12">
       <body id = "introduce">
+        <script>
+        $(function(){
+            $(window).load(function(){
+                var delaySpeed = 100;
+                var fadeSpeed = 2000;
+                $('p').each(function(i){
+                    $(this).delay(i*(delaySpeed)).css({display:'block',opacity:'0'}).animate({opacity:'1'},fadeSpeed);
+                });
+            });
+        });
+        </script>
         <div class = "before_description">
           <p class = "top_title"> circle </p>
           <p class = "explain">このアプリは幹事様、イベントを開催したい人向けのwebサービスです。</p><br>
