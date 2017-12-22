@@ -10,13 +10,13 @@ class CommentsController < ApplicationController
 
         format.js { render :index }
 
-        unless @collection.user_id == @comment.user.id
+        unless @collection.user_id == @comment.user_id
           Pusher.trigger("user_#{@comment.collection.user_id}_channel", 'comment_created', {
             message: 'あなたの作成したイベントにコメントが付きました'
           })
           NoticeMailer.sendmail_comment(@collection).deliver
         end
-        unless @collection.user_id == @comment.user.id
+        unless @collection.user_id == @comment.user_id
           Pusher.trigger("user_#{@comment.collection.user_id}_channel", 'notification_created', {
           unread_counts: Notification.where(user_id: @comment.collection.user.id, read: false).count
           })

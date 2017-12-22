@@ -19,7 +19,7 @@
                    <p><%= posted_time(notification.created_at) %></p>
                 <% elsif notification.comment == nil &&  notification.join == nil %>
                   <%= notification.message.conversation.target_user(current_user).try(:name)%>さんから
-                  (<%= link_to "新たなメッセージ",  conversation_messages_path(notification.message.conversation, notification_id: notification.id) %>)が届いています
+                  <%= link_to "新たなメッセージ",  conversation_messages_path(notification.message.conversation, notification_id: notification.id) %>が届いています
                    <p><%= posted_time(notification.created_at) %></p>
                 <% end %>
                 </p>

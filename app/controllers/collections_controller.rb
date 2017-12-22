@@ -26,6 +26,7 @@ class CollectionsController < ApplicationController
   def create
     @collection = Collection.new(collection_params)
     @collection.user_id = current_user.id
+    @binding.pry
     if @collection.save
       redirect_to collections_path
       NoticeMailer.sendmail_collection(@collection).deliver
