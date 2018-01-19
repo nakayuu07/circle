@@ -4,25 +4,9 @@
       <div class = "col-md-12 col-sm-12 col-xs-12">
         <p id="notice"><%= notice %></p>
 
-        <script>
-          $(function () {
-            $("#notice").hide(4000);
-          });
-        </script>
-
         <div class = "description">
           <p class = "login_title"> circle </p>
-          <script>
-          $(function(){
-              $(document).ready(function(){
-                  var delaySpeed = 800;
-                  var fadeSpeed = 5000;
-                  $('h5,h2').each(function(i){
-                      $(this).delay(i*(delaySpeed)).css({display:'block',opacity:'0'}).animate({opacity:'1'},fadeSpeed);
-                  });
-              });
-          });
-          </script>
+
           <h5>このアプリは幹事様、イベントを開催したい人向けのwebサービスです。</h5><br>
           <h5>こんなイベントやってみたい、こんなイベントがあるなら行ってみたい。</h5><br>
           <h5>といったイベントを通し新たなコミュニティーを作ることを目的としたwebサービスです。</h5><br>
