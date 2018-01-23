@@ -53,6 +53,7 @@ header {
 }
 
 
+
 @media (max-width: 767px) {
 .navbar-default .navbar-nav .open .dropdown-menu > li > a {
     color: #ccc;
@@ -63,33 +64,22 @@ header {
     }
   }
   .navbar-default .navbar-toggle {
-    background-color: transparent;
+    background-color: white;
     &:hover, &:focus {
-      background-color: transparent;
+      background-color: white;
     }
   }
 }
+
 .nav>li>a {
     position: relative;
     display: block;
     padding: 10px 15px;
     text-align: center;
-    margin-left: px;
     margin-top: 5px;
 }
 
-.navbar-toggle {
-    position: relative;
-    float: none;
-    margin-right: 15px;
-    padding: 9px 10px;
-    margin-top: 8px;
-    margin-bottom: 8px;
-    background-color: transparent;
-    background-image: none;
-    border: 1px solid transparent;
-    border-radius: 4px;
-}
+
 
 body{
   margin: 0px;
