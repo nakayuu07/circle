@@ -1,0 +1,17 @@
+<h1 class = "center">ユーザー検索結果</h1>
+<div class = "container ">
+  <div class = "row">
+      <% @users.each do |user| %>
+        <div class = "col-xs-6 col-md-4">
+          <%= link_to user_path(user) do %>
+            <table class = "search_user">
+            <th>
+              <%= user.name %>
+              <%= profile_img(user) %>
+            </th>
+            </table>
+        </div>
+        <% end %>
+      <% end %>
+  </div>
+</div>

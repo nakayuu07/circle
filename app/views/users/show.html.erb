@@ -3,6 +3,7 @@
     <div class= "col-md-12 col-sm-12 col-xs-12">
       <h1 class = "mypage-picture center"><%= profile_img(@user) if profile_img(@user) %>
         <%= @user.name %>さんのページです</h1>
+
         <% if @user.id != current_user.id %>
           <div class="center">
             <!-- <%= link_to @user.name, @user %> -->
@@ -11,6 +12,10 @@
           </div>
         <% else %>
             <p class = "center"><%= link_to "プロフィール変更へ",edit_user_registration_path %></p>
+            <li class = "user_search_form"><%= form_tag users_path, class: 'user_search_form', :method => 'get' do %>
+              <%= text_field_tag :user_search, params[:user_search], placeholder: "ユーザー検索" %>
+              <%= submit_tag "検索", :name => nil %></li>
+            <% end %>
         <% end %>
       </div>
     </div>

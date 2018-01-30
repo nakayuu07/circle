@@ -2,6 +2,7 @@ class UsersController < ApplicationController
   before_action :authenticate_user!
 
   def index
+    @users = User.user_search(params[:user_search])
   end
 
   def show
