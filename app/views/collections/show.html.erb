@@ -40,9 +40,11 @@
         <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-show-count="false">Tweet</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
       </div>
 
-      <a href="http://line.me/R/msg/text/?http://qiita.com/katsuma">
-        <button class = "line_share">LINEで友達に送る</button>
-      </a>
+
+      <p><%= link_to "http://www.facebook.com/sharer.php?u=#{collection_url(@collection)}" %></p>
+
+
+
 
       <p class = "comments"><strong>[コメント一覧]</strong></p>
       <div id="comments_area">
