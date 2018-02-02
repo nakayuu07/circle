@@ -9,6 +9,7 @@
       });
       </script>
 
+       <%= link_to 'facebookでシェアする', 'https://www.facebook.com/', class: "btn btn-primary"%>
       <div class = "collection-info">
         <p class = "show-picture"><%= event_img(@collection) %></p>
         <p><strong>タイトル</strong></p>
@@ -32,7 +33,7 @@
           <p><%= link_to " ", edit_collection_path(@collection),class:'fa fa-pencil-square-o fa-lg',method: :get %>
           <%= link_to " ", @collection, method: :delete, data: { confirm: '本当に削除してもいいですか?' },class: 'glyphicon glyphicon-trash' %></p>
         <% else %>
-          <p><%= render partial: 'keeps/collection_keep', locals: { keep: @keep, collection: @collection } %>
+          <p><%= render partial: 'keeps/collection_keep', locals: { keep: @keep, collection: @collection } %></p>
         <% end %>
       </div>
 
