@@ -37,8 +37,45 @@
       </div>
 
       <div class = "right   share_bottun">
-        <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-show-count="false">Tweet</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+        <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-show-count="false">Tweet</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"  img src = "top.jpg"></script>
       </div>
+
+
+      <input type="button" id="randum" value="ランダムなパラメータを生成"></p>
+      <input type="text" size="50" id="para" value="https://circle-event.herokuapp.com/" />
+
+      <li class="line">
+        <a href="http://line.me/R/msg/text/?https://circle-event.herokuapp.com/"><img src="アイコン画像" width="82" height="20" alt="LINEに送る"></a>
+      </li>
+      <script>
+
+      $('#randum').click(function(){
+          // 0～50個の文字列数と組み込む英数字をランダムに生成
+          var num = Math.floor( Math.random() * 50 );
+          var str = 'abcdefghijklmnopqrstuvwxyz'
+              + 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
+              + '0123456789';
+          str = str.split('');
+          var $rand_str = '';
+          for(var i = 0; i < num; i++) {
+            $rand_str += str[Math.floor(Math.random() * str.length)];
+          }
+
+          //生成パラメータをutf-8エンコードして新規URL発行
+          var $rand_str = encodeURIComponent($rand_str);
+          var $url = 'https://circle-event.herokuapp.com/' + $rand_str;
+          $('#para').val($url);
+
+          // SNSボタン
+          funcShareLink($url);
+      });
+
+      // SNSボタンURL置換
+      function funcShareLink($url) {
+        $('.line a').attr({"href": "https://circle-event.herokuapp.com/?" + $url});
+      }
+      </script>
+
 
 
       <p class = "comments"><strong>[コメント一覧]</strong></p>
