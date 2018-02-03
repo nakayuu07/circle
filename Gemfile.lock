@@ -489,6 +489,7 @@ DEPENDENCIES
   database_cleaner
   devise
   dotenv-rails
+  execjs
   factory_girl_rails
   faker
   fog

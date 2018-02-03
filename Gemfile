@@ -34,6 +34,8 @@ gem 'fog'
 
 gem 'pusher'
 
+gem 'execjs'
+
 gem 'dotenv-rails'
 
 group :development, :test do
