@@ -27,6 +27,7 @@
           <%= profile_img(@collection.user) %></p>
         <% end %>
       </div>
+
       <div class = "show_icon">
         <% if @collection.user.id == current_user.id %>
           <p><%= link_to " ", edit_collection_path(@collection),class:'fa fa-pencil-square-o fa-lg',method: :get %>
@@ -36,9 +37,9 @@
         <% end %>
       </div>
 
-        <div class = "right sns_share_bottun">
-          <%= render partial: 'collections/sns_share' %>
-        </div>
+      <div class = "right sns_share_bottun">
+        <%= render partial: 'collections/sns_share' %>
+      </div>
 
       <p class = "comments"><strong>[コメント一覧]</strong></p>
       <div id="comments_area">
