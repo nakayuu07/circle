@@ -13,11 +13,11 @@
                   <%= notification.comment.user.try(:name) %>さんが
                   あなたのイベント（<%= link_to "#{truncate(notification.comment.collection.title,length:12)}", collection_path(notification.comment.collection, notification_id: notification.id) %>）にコメントしました。
                    <p><%= posted_time(notification.created_at) %></p>
-                <% elsif notification.comment == nil &&  notification.message == nil  %>
+                <% elsif notification.comment == nil &&  notification.message == nil %>
                   <%= notification.join.user.try(:name) %>さんが
                   あなたのイベント（<%= link_to "#{truncate(notification.join.collection.title,length:12)}", collection_path(notification.join.collection, notification_id: notification.id) %>）に参加しました。
                    <p><%= posted_time(notification.created_at) %></p>
-                <% elsif notification.comment == nil &&  notification.join == nil %>
+                <% elsif notification.comment == nil &&  notification.join == nil%>
                   <%= notification.message.conversation.target_user(current_user).try(:name)%>さんから
                   <%= link_to "新たなメッセージ",  conversation_messages_path(notification.message.conversation, notification_id: notification.id) %>が届いています
                    <p><%= posted_time(notification.created_at) %></p>

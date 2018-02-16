@@ -14,12 +14,9 @@ header {
   margin-left: 15px;
 }
 
-
-
 .navbar-nav > li{
       position: relative;
       display: block;
-      z-index: 1;
       background: DimGray;
 
     }
@@ -54,7 +51,7 @@ header {
 
 
 
-@media (max-width: 767px) {
+@media (max-width: 768px) {
 .navbar-default .navbar-nav .open .dropdown-menu > li > a {
     color: #ccc;
     display: block;
@@ -152,3 +149,9 @@ color: #fff100;
 
 .top-child a:hover { background-color: #247BA0;
  color: blue; }
+
+ .top_user_img{
+   width: 40px;
+   border-radius: 30px;
+   margin-top: 10px;
+ }
