@@ -2,30 +2,25 @@
   <p class = "center"><%= link_to '以前のメッセージ', '?m=all' %></p>
 <% end %>
 
-<div class="container">
-  <div class = "row">
-    <div class = "col-md-12 col-sm-12 col-xs-12">
-      <div class="center">
-        <% @messages.each do |message| %>
-          <% if message.body %>
-            <% user = User.find(message.user_id) %>
-          <table>
-            <div class = "massage_border">
-              <tr>
-                <th class = "massage_picture"><%= profile_img(user) %></th>
-                <th><strong><%= user.name %></strong></th>
-                <th><%= message.message_time %></th>
-              </tr>
-            </div>
-          </table>
-
-          <p class = "massage_content"><%= message.body %></p>
-
-          <% end %>
-        <% end %>
-      </div>
-    </div>
-  </div>
+<div class="container_field">
+  <% @messages.each do |message| %>
+    <% if message.body %>
+      <% user = User.find(message.user_id) %>
+      <% if current_user == user %>
+        <div class = "row right">
+          <div class = "col-md-6 col-md-offset-6  col-sm-6 col-sm-offset-6  col-xs-6 col-xs-offset-6">
+            <p  class = "right new_line current_user_message_box"><%= message.body %>
+          </div>
+        </div>
+      <% else %>
+        <div class = "row">
+          <div class = "col-md-6 col-sm-6 col-xs-6">
+            <p class = "massage_picture left opponent_user_message_box"></strong><%= message.body %></p>
+          </div>
+        </div>
+      <% end %>
+    <% end %>
+  <% end %>
 </div>
 
 

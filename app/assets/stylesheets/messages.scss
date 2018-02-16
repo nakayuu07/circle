@@ -22,3 +22,35 @@
   white-space: normal;
   display: block;
 }
+
+.new_line{
+  word-wrap: break-all;
+}
+
+.opponent_user_message_box {
+    position: relative;
+    margin-top: 5px;
+    padding: 8px 15px;
+    background: grey;
+    border-radius: 30px;
+    color: white;
+}
+
+.opponent_user_message_box p {
+    margin: 0;
+    padding: 0;
+}
+
+.current_user_message_box {
+    position: relative;
+    margin-top: 10px;
+    padding: 8px 15px;
+    background: #66CC00;
+    border-radius: 30px;
+    color: white;
+}
+
+.current_user_message_box p {
+    margin: 0;
+    padding: 0;
+}
