@@ -40,28 +40,28 @@
 
 <body>
 <% if user_signed_in? %>
-<nav class="navbar navbar-default">
-  <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#gnavi">
-    <span class="sr-only">B</span>
-    <span class="icon-bar"></span>
-    <span class="icon-bar"></span>
-    <span class="icon-bar"></span>
-  </button>
-  <%= link_to notifications_index_path, class: "navbar-brand" do%>
-      <i class="fa fa-bell fa-1x"><span id="unread_count"><%= @notifications_count %></span></i>
-  <% end %>
-  <div id="gnavi" class="collapse navbar-collapse">
-    <ul class="nav navbar-nav">
-      <li><%= link_to "ホーム", root_path,class: 'glyphicon glyphicon-home' %></li>
-      <li><%= link_to "新規投稿", new_collection_path,class: 'glyphicon glyphicon-pencil', method: :get %></li>
-      <li><%= link_to "一覧", collections_path,class: 'glyphicon glyphicon-list-alt' %></li>
-      <li><%= link_to 'プロフィール', edit_user_registration_path,class: 'glyphicon glyphicon-user' %></li>
-      <li><%= link_to 'マイページ', user_path(current_user), class: 'glyphicon glyphicon-book' %></li>
-      <li><%= link_to "メッセージ", conversations_path, class: "glyphicon glyphicon-envelope" %></li>
-      <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete,class: 'glyphicon glyphicon-off' %></li>
-    </ul>
-  </div>
-</nav>
+  <nav class="navbar navbar-default">
+    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#gnavi">
+      <span class="sr-only">B</span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+    <%= link_to notifications_index_path, class: "navbar-brand" do%>
+        <i class="fa fa-bell fa-1x"><span id="unread_count"><%= @notifications_count %></span></i>
+    <% end %>
+    <div id="gnavi" class="collapse navbar-collapse">
+      <ul class="nav navbar-nav">
+        <li><%= link_to "ホーム", root_path,class: 'glyphicon glyphicon-home' %></li>
+        <li><%= link_to "新規投稿", new_collection_path,class: 'glyphicon glyphicon-pencil', method: :get %></li>
+        <li><%= link_to "一覧", collections_path,class: 'glyphicon glyphicon-list-alt' %></li>
+        <li><%= link_to 'プロフィール', edit_user_registration_path,class: 'glyphicon glyphicon-user' %></li>
+        <li><%= link_to 'マイページ', user_path(current_user), class: 'glyphicon glyphicon-book' %></li>
+        <li><%= link_to "メッセージ", conversations_path, class: "glyphicon glyphicon-envelope" %></li>
+        <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete,class: 'glyphicon glyphicon-off' %></li>
+      </ul>
+    </div>
+  </nav>
 
 <% end %>
 <%= yield %>

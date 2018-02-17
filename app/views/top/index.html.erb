@@ -20,31 +20,31 @@
       </div>
     </div>
 <% else %>
-  <div class = "row">
-    <div class = "col-md-12 col-sm-12 col-xs-12">
-      <body id = "introduce">
-        <script>
-        $(function(){
-            $(document).ready(function(){
-                var delaySpeed = 800;
-                var fadeSpeed = 2000;
-                $('p').each(function(i){
-                    $(this).delay(i*(delaySpeed)).css({display:'block',opacity:'0'}).animate({opacity:'1'},fadeSpeed);
-                });
-            });
-        });
-        </script>
-        <div class = "before_description">
-          <p class = "top_title"> circle </p>
-          <p class = "explain">このアプリは幹事様、イベントを開催したい人向けのwebサービスです。</p><br>
-          <p class = "explain">こんなイベントやってみたい、こんなイベントがあるなら行ってみたい。</p><br>
-          <p class = "explain">といったイベントを通し新たなコミュニティーを作ることを目的としたwebサービスです。</p><br>
-          <p class = "explain">circleで新たなコミュニティーを作りませんか?</p><br>
-          <p class = "top_join"><%= link_to "sign up",new_user_registration_path, class: "btn btn-danger btn-lg" %></p>
-          <p class = "top_login"><%= link_to "login", new_user_session_path, class: "btn btn- btn-success btn-lg" %></p>
-        </div>
-        <% end %>
-      </body>
+    <div class = "row">
+      <div class = "col-md-12 col-sm-12 col-xs-12">
+        <body id = "introduce">
+          <script>
+          $(function(){
+              $(document).ready(function(){
+                  var delaySpeed = 800;
+                  var fadeSpeed = 2000;
+                  $('p').each(function(i){
+                      $(this).delay(i*(delaySpeed)).css({display:'block',opacity:'0'}).animate({opacity:'1'},fadeSpeed);
+                  });
+              });
+          });
+          </script>
+          <div class = "before_description">
+            <p class = "top_title"> circle </p>
+            <p class = "explain">このアプリは幹事様、イベントを開催したい人向けのwebサービスです。</p><br>
+            <p class = "explain">こんなイベントやってみたい、こんなイベントがあるなら行ってみたい。</p><br>
+            <p class = "explain">といったイベントを通し新たなコミュニティーを作ることを目的としたwebサービスです。</p><br>
+            <p class = "explain">circleで新たなコミュニティーを作りませんか?</p><br>
+            <p class = "top_join"><%= link_to "sign up",new_user_registration_path, class: "btn btn-danger btn-lg" %></p>
+            <p class = "top_login"><%= link_to "login", new_user_session_path, class: "btn btn- btn-success btn-lg" %></p>
+          </div>
+        </body>
+      </div>
     </div>
   </div>
-</div>
+<% end %>

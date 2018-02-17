@@ -16,10 +16,8 @@ class MessagesController < ApplicationController
       @messages = @conversation.messages
     end
 
-    if @messages.last
-      if @messages.last.user_id != current_user.id
-       @messages.last.read = true
-      end
+    if @messages.last && @messages.last.user_id != current_user.id
+      @messages.last.read = true
     end
 
     @message = @conversation.messages.build
@@ -33,12 +31,11 @@ class MessagesController < ApplicationController
 
     @notification.save
 
-    if @message.save
-      unless message_received_user_id == current_user.id
-          Pusher.trigger("user_#{message_received_user_id}_channel", 'message_created', {
-            message: '新たなメッセージが届きました'
-          })
-      end
+    if @message.save && message_received_user_id != current_user.id
+      Pusher.trigger("user_#{message_received_user_id}_channel", 'message_created', {
+        message: '新たなメッセージが届きました'
+      })
+
       Pusher.trigger("user_#{message_received_user_id}_channel", 'notification_created', {
       unread_counts: Notification.where(user_id: message_received_user_id, read: false).count
       })
@@ -47,9 +44,9 @@ class MessagesController < ApplicationController
       redirect_to conversation_messages_path(@conversation)
     end
   end
-end
 
-private
-  def message_params
-    params.require(:message).permit(:body, :user_id)
-  end
+  private
+    def message_params
+      params.require(:message).permit(:body, :user_id)
+    end
+end

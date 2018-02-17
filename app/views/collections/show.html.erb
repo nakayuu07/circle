@@ -22,29 +22,29 @@
         <p><strong>日付：<%= @collection.date %></strong></p>
         <p><strong>開始時間：<%= @collection.starttime %></strong></p>
         <p class = "show-endtime"><strong>終了時間：<%= @collection.endtime %></strong></p>
-      <div class = "show_user_info">
-        <p class = "user-picture">主催者: <strong><%= link_to user_path(@collection.user.id) do %><%= @collection.user.name %></strong>
-          <%= profile_img(@collection.user) %></p>
-        <% end %>
-      </div>
+        <div class = "show_user_info">
+          <p class = "user-picture">主催者: <strong><%= link_to user_path(@collection.user.id) do %><%= @collection.user.name %></strong>
+            <%= profile_img(@collection.user) %></p>
+          <% end %>
+        </div>
 
-      <div class = "show_icon">
-        <% if @collection.user.id == current_user.id %>
-          <p><%= link_to " ", edit_collection_path(@collection),class:'fa fa-pencil-square-o fa-lg',method: :get %>
-          <%= link_to " ", @collection, method: :delete, data: { confirm: '本当に削除してもいいですか?' },class: 'glyphicon glyphicon-trash' %></p>
-        <% else %>
-          <p><%= render partial: 'keeps/collection_keep', locals: { keep: @keep, collection: @collection } %></p>
-        <% end %>
-      </div>
+        <div class = "show_icon">
+          <% if @collection.user.id == current_user.id %>
+            <p><%= link_to " ", edit_collection_path(@collection),class:'fa fa-pencil-square-o fa-lg',method: :get %>
+            <%= link_to " ", @collection, method: :delete, data: { confirm: '本当に削除してもいいですか?' },class: 'glyphicon glyphicon-trash' %></p>
+          <% else %>
+            <p><%= render partial: 'keeps/collection_keep', locals: { keep: @keep, collection: @collection } %></p>
+          <% end %>
+        </div>
 
-      <div class = "right sns_share_bottun">
-        <%= render partial: 'collections/sns_share' %>
-      </div>
+        <div class = "right sns_share_bottun">
+          <%= render partial: 'collections/sns_share' %>
+        </div>
 
-      <p class = "comments"><strong>[コメント一覧]</strong></p>
-      <div id="comments_area">
-        <%= render partial: 'comments/index', locals: { comments: @comments, collection: @collection } %>
-      </div>
+        <p class = "comments"><strong>[コメント一覧]</strong></p>
+        <div id="comments_area">
+          <%= render partial: 'comments/index', locals: { comments: @comments, collection: @collection } %>
+        </div>
         <%= render partial: 'comments/form', locals: { comment: @comment, collection: @collection } %>
       </div>
     </div>

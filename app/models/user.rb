@@ -72,15 +72,16 @@ class User < ActiveRecord::Base
    user
  end
 
- def self.user_search(user_name)
-   if user_name
-     where(['name LIKE ?',"%#{user_name}%"])
-   else
-     all.order(:name)
-   end
- end
-
   def self.create_unique_string
     SecureRandom.uuid
   end
+
+  def self.user_search(user_name)
+    if user_name
+      where(['name LIKE ?',"%#{user_name}%"])
+    else
+      all.order(:name)
+    end
+  end
+  
 end
