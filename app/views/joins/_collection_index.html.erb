@@ -1,9 +1,6 @@
 <h3>※参加者一覧</h3>
-
-
-
-<table>
-  <% if collection.join_users.count <= 5 %>
+<% if collection.join_users.count <= 5 %>
+  <table>
     <% collection.join_users.each do |user| %>
       <tr>
         <th><%= profile_img(user) %></th>
@@ -11,14 +8,16 @@
         <% end %>
       </tr>
     <% end %>
-  <% elsif collection.join_users.count >= 5 %>
+  </table>
+<% elsif collection.join_users.count > 5 %>
+  <table>
     <% collection.join_users.first(5).each do |user| %>
       <tr>
         <th><%= profile_img(user) %></th>
-        <td><%= link_to user_path(user.id) do %><%= user.name %></td>
+        <td><%= link_to user_path(user.id) do %><%= user.name %></td></p>
         <% end %>
       </tr>
     <% end %>
+  </table>
   <p><%= link_to "参加者全員を見にいく", collection_joins_path(collection), class:"glyphicon glyphicon-info-sign" %></p>
-  <% end %>
-</table>
+<% end %>
