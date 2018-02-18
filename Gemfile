@@ -1,48 +1,33 @@
 source 'https://rubygems.org'
 
-
-
 gem 'rails', '4.2.6'
-
 gem 'pg'
-
 gem 'sass-rails', '~> 5.0'
-
 gem 'uglifier', '>= 1.3.0'
-
 gem 'coffee-rails', '~> 4.1.0'
-
 gem 'jquery-rails'
-
 gem 'turbolinks'
-
 gem 'jbuilder', '~> 2.0'
-
 gem 'sdoc', '~> 0.4.0', group: :doc
 
-gem 'devise'
+gem 'rails_12factor', group: :production
 
-gem 'faker'
-
-gem 'kaminari'
-
-gem 'rails_admin'
-
+gem 'bootstrap-sass', '3.2.0.0'
 gem 'cancan'
-
-gem 'fog'
-
-gem 'pusher'
-
-gem 'execjs'
-
+gem 'carrierwave'
+gem 'devise'
 gem 'dotenv-rails'
-
-group :development, :test do
-  gem "rspec-rails"
-  gem "factory_girl_rails"
-  gem 'pry-rails'
-end
+gem 'execjs'
+gem 'faker'
+gem 'fog'
+gem 'kaminari'
+gem 'mini_magick'
+gem 'omniauth'
+gem 'omniauth-twitter'
+gem 'omniauth-facebook'
+gem 'pusher'
+gem 'rails_admin'
+gem 'twitter-bootstrap-rails'
 
 group :test do
   gem "capybara"
@@ -52,17 +37,15 @@ group :test do
   gem "timecop"
 end
 
+group :development, :test do
+  gem "rspec-rails"
+  gem "factory_girl_rails"
+  gem 'pry-rails'
+end
+
+
 group :development do
   gem 'web-console', '~> 2.0'
   gem 'spring'
   gem 'letter_opener_web'
 end
-gem 'rails_12factor', group: :production
-
-gem 'twitter-bootstrap-rails'
-gem 'bootstrap-sass', '3.2.0.0'
-gem 'omniauth'
-gem 'omniauth-twitter'
-gem 'omniauth-facebook'
-gem 'carrierwave'
-gem 'mini_magick'
