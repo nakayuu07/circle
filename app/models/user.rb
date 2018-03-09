@@ -83,5 +83,4 @@ class User < ActiveRecord::Base
       all.order(:name)
     end
   end
-  
 end

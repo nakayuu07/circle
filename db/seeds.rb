@@ -26,7 +26,7 @@
   collection = Collection.create!(title: "rails 勉強会",
                 content: "hoge",
                 place: "渋谷",
-                date: "2017-11-28",
+                date: "2018-11-28",
                 starttime: "10:00",
                 endtime: "12:00",
                 capacity: "10",

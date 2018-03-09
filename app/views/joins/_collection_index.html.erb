@@ -14,7 +14,7 @@
     <% collection.join_users.first(5).each do |user| %>
       <tr>
         <th><%= profile_img(user) %></th>
-        <td><%= link_to user_path(user.id) do %><%= user.name %></td></p>
+        <td><%= link_to user_path(user.id) do %><%= user.name %></td>
         <% end %>
       </tr>
     <% end %>
