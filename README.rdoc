@@ -1,30 +1,25 @@
-== README
+# サービス名
+---
+(circle)(https://circle-event.herokuapp.com/)
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# バージョン
+---
+Ruby：2.3.0
+Rails：4.2.6
+postgres (PostgreSQL) 9.6.3
 
-Things you may want to cover:
+# なぜ作ったのか
+---
+過去にイベントを主催した経験や幹事をやった経験から、参加者の管理など一つのサイトでできると便利と思ったため。
+またsnsは新たなコミュニティを形成する場だと思っており、イベントがそのきっかけになると思ったため。
 
-* Ruby version
+#このサービスの使い方
+---
+主催者
+1・新規投稿からイベント投稿
+2.集客のためにtwitterやlineで拡散できる
+3.参加者したい人が参加ボタンを押す・イベントに関しての問い合わせ(メッセージ)・イベントにコメントがされると主催者に通知がいく
 
-ruby 2.3.0
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+参加者
+1.イベント検索や一覧画面から行きたいイベントを探す
+2.ヒットしたイベントの詳細に遷移し参加ボタンを押す
