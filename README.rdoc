@@ -1,14 +1,15 @@
-# サービス名
+#サービス名
 ---
-(circle)(https://circle-event.herokuapp.com/)
+circle  
+(https://circle-event.herokuapp.com/)
 
-# バージョン
+#バージョン
 ---
 Ruby：2.3.0
 Rails：4.2.6
 postgres (PostgreSQL) 9.6.3
 
-# なぜ作ったのか
+#なぜ作ったのか
 ---
 過去にイベントを主催した経験や幹事をやった経験から、参加者の管理など一つのサイトでできると便利と思ったため。
 またsnsは新たなコミュニティを形成する場だと思っており、イベントがそのきっかけになると思ったため。
