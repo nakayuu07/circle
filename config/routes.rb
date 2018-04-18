@@ -28,6 +28,6 @@ Rails.application.routes.draw do
     resources :messages
   end
 
-  root to: 'top#index'
+  root to: 'tops#index'
 
 end
