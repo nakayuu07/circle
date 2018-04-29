@@ -1,6 +1,8 @@
 class CollectionsController < ApplicationController
   before_action :set_collection, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!
+  before_action :correct_user, only: [:edit, :update]
+
 
   def index
     @collections = Collection.search(params[:search]).page(params[:page])
@@ -48,11 +50,14 @@ class CollectionsController < ApplicationController
   end
 
   private
-
     def set_collection
       @collection = Collection.find(params[:id])
     end
 
+    def correct_user
+      @user = User.find(params[:id])
+      redirect_to(root_url) unless @user == current_user
+    end
 
     def collection_params
       params.require(:collection).permit(:title, :content, :place, :url, :capacity, :starttime, :endtime, :date, :picture,:picture_cache)
