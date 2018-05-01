@@ -9,7 +9,6 @@
             <ul>
             <% @collection.errors.full_messages.each do |message| %>
               <li><%= message %></li>
-              <% binding.pry%>
             <% end %>
             </ul>
           </div>
@@ -42,7 +41,7 @@
       <p class = "content center"><%= f.text_area :content, size: "56x35", placeholder: "持ち物、費用等" %></p>
     </div>
   </div>
-  
+
   <div class = "row">
     <div class = "col-md-12">
       <div class = "center">
