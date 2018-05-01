@@ -3,7 +3,6 @@ class CollectionsController < ApplicationController
   before_action :authenticate_user!
   before_action :correct_user, only: [:edit, :update]
 
-
   def index
     @collections = Collection.search(params[:search]).page(params[:page])
     flash.now[:notice] = Collection.set_flash_message(params[:search])
