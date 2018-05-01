@@ -47,7 +47,7 @@
       <span class="icon-bar"></span>
       <span class="icon-bar"></span>
     </button>
-    <%= link_to notifications_index_path, class: "navbar-brand" do%>
+    <%= link_to notifications_path, class: "navbar-brand" do%>
         <i class="fa fa-bell fa-1x"><span id="unread_count"><%= @notifications_count %></span></i>
     <% end %>
     <div id="gnavi" class="collapse navbar-collapse">
@@ -63,7 +63,6 @@
     </div>
   </nav>
 
-  
 <% end %>
 <%= yield %>
 
