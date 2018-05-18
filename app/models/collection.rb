@@ -22,8 +22,8 @@ class Collection < ActiveRecord::Base
 
   def self.search(search)
     if search
-      where(['title LIKE ?',"%#{search}%"]).where('date > ?', Date.today)
-    else
+      where('title LIKE ?',"%#{search}%").where('date > ?', Date.today)
+    elsif search.empty?
       all.order(:date).where('date >= ?', Date.today)
     end
   end
