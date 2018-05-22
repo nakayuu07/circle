@@ -37,7 +37,6 @@ class CollectionsController < ApplicationController
 
   def update
     if @collection.update(collection_params)
-      binding.pry
       redirect_to collections_path
     else
       render 'edit'
