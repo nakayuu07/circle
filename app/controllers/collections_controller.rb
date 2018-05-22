@@ -37,6 +37,7 @@ class CollectionsController < ApplicationController
 
   def update
     if @collection.update(collection_params)
+      binding.pry
       redirect_to collections_path
     else
       render 'edit'
@@ -54,7 +55,7 @@ class CollectionsController < ApplicationController
     end
 
     def correct_user
-      @user = User.find(params[:id])
+      @user = @collection.user
       redirect_to(root_url) unless @user == current_user
     end
 
