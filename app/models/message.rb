@@ -4,7 +4,6 @@ class Message < ActiveRecord::Base
   has_many :notifications, dependent: :destroy
 
   validates_presence_of :body, :conversation_id, :user_id
-
   validates :body, presence: true
 
   def message_time

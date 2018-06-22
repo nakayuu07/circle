@@ -7,7 +7,6 @@ class Collection < ActiveRecord::Base
   has_many :keeps_users, through: :keeps, source: :user
 
   validates :title, :content, :place, :starttime, :date, :capacity, presence: true
-
   validates :capacity, numericality: { only_integer: true }
 
   mount_uploader :picture, ImageUploader

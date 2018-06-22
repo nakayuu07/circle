@@ -7,11 +7,8 @@ class JoinsController < ApplicationController
 
    def create
      @join = current_user.joins.create(collection_id: params[:collection_id])
-
      @notification = @join.notifications.build(user_id: @join.collection.user_id )
-
      @notification.save
-
 
      unless @join.collection.user_id == current_user.id
        Pusher.trigger("user_#{@join.collection.user_id}_channel", 'join_created', {
@@ -21,7 +18,7 @@ class JoinsController < ApplicationController
      Pusher.trigger("user_#{@join.collection.user_id}_channel", 'notification_created', {
        unread_counts: Notification.where(user_id: @join.collection.user.id, read: false).count
      })
-     
+
      redirect_to collection_url(@join.collection), notice: "#{@join.collection.user.name}さんのイベントに参加します"
    end
 
